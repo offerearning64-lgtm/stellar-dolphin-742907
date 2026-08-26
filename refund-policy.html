@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Refund Policy - Token Rush</title>
+    <meta name="description" content="Read the Token Rush Refund Policy regarding our free-to-play gaming services.">
+    <link rel="canonical" href="https://tokenrush.online/refund-policy.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="legal-pages.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="https://tokenrush.online/" class="logo">
+                <img src="https://www.dropbox.com/scl/fi/l5nd55mp7iifueem84n7n/3194018_ico.png?rlkey=hi6cqhhwjnlqxs1q50e14mkoc&st=sq9bmh6y&raw=1" alt="Token Rush App Icon" class="logo-icon" width="44" height="44">
+                Token Rush
+            </a>
+            <nav class="nav-links" style="display: flex; gap: 32px; list-style: none;">
+                <li><a href="https://tokenrush.online/#play-games">Play Games</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </nav>
+            <button class="mobile-menu-btn" id="menuToggle" aria-label="Open Menu">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="overlay" id="overlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="https://tokenrush.online/">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="dmca.html">DMCA</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="legal-container">
+        <div class="legal-header">
+            <div class="legal-badge">Service Terms</div>
+            <h1>Refund Policy</h1>
+            <p class="update-date">Effective Date: 26 August 2026</p>
+        </div>
+
+        <p>Thank you for using Token Rush. This Refund Policy explains our stance on refunds and returns regarding the use of our website.</p>
+        
+        <h2>Free-to-Play Platform</h2>
+        <p>Token Rush is a free-to-play gaming platform. We do not charge users to access our website, play our HTML5 games, or use any of the core features of our Service. Because no financial transactions are currently required to use the website, there is no conventional purchase or refund system in place.</p>
+
+        <h2>In-Game Tokens and Rewards</h2>
+        <p>Any tokens, points, or rewards that may appear within specific games on our platform are strictly for in-game entertainment purposes. They do not hold real-world monetary value and cannot be purchased, sold, or exchanged for real money. Therefore, no refunds are applicable for in-game items or tokens.</p>
+
+        <h2>Future Paid Services</h2>
+        <p>If Token Rush introduces paid features, premium accounts, or in-app purchases in the future, a detailed refund procedure specific to those purchases will be added to this page. Any such future paid services will be governed by the applicable consumer protection laws of India.</p>
+
+        <h2>Contact Information</h2>
+        <p>If you have any questions about this Refund Policy or if you believe there has been an unauthorized charge on your account, please contact us immediately:</p>
+        <ul>
+            <li><strong>Email:</strong> technicalmy75@gmail.com</li>
+            <li><strong>Phone:</strong> 7715952502</li>
+            <li><strong>Location:</strong> Uttar Pradesh, Gonda Station Road, India</li>
+        </ul>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <nav class="footer-nav">
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms & Conditions</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="cookie-policy.html">Cookie Policy</a>
+            <a href="faq.html">FAQ</a>
+            <a href="dmca.html">DMCA</a>
+            <a href="refund-policy.html">Refund Policy</a>
+        </nav>
+        <div class="footer-copyright">
+            <p>&copy; 2026 Token Rush. All Rights Reserved.</p>
+            <p>Designed for Indian Gamers.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay = document.getElementById('overlay');
+
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.add('open');
+            overlay.classList.add('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
