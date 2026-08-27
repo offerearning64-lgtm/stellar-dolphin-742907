@@ -1,126 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Frequently Asked Questions (FAQ) - Token Rush</title>
-    <meta name="description" content="Find answers to common questions about Token Rush, including how to play games, account requirements, and privacy.">
-    <link rel="canonical" href="https://tokenrush.online/faq.html">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="legal-pages.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ – Token Rush | Frequently Asked Questions</title>
+<meta name="description" content="Frequently asked questions about Token Rush: game counts on the website and Android app, rewards, advertisements, cookies, sharing game URLs, and how to contact the team.">
+<link rel="canonical" href="https://tokenrush.online/faq.html">
+<link rel="icon" type="image/png" href="https://www.dropbox.com/scl/fi/l5nd55mp7iifueem84n7n/3194018_ico.png?rlkey=hi6cqhhwjnlqxs1q50e14mkoc&st=sq9bmh6y&raw=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FFF;--bg2:#FAFAF7;--line:rgba(20,20,25,.09);--line2:rgba(20,20,25,.16);--text:#141416;--muted:#6E6C76;--gold:#F5A201;--gold-deep:#C77F00;--gold-soft:rgba(245,162,1,.12);--gold-line:rgba(245,162,1,.45);--ink:#141416;--fd:'Plus Jakarta Sans',system-ui,sans-serif;--fb:'Inter',system-ui,sans-serif;--r-lg:24px;--r-md:16px;--max:860px}
+html{scroll-behavior:smooth}html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.site-head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.head-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem clamp(1rem,4vw,2rem)}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:10px;border:1px solid var(--line)}
+.brand b{font-family:var(--fd);font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
+.brand b i{font-style:normal;color:var(--gold-deep)}
+.btn-home{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-weight:700;font-size:.85rem;background:var(--gold);color:var(--gold-ink);border-radius:999px;padding:.6rem 1.2rem;text-decoration:none;transition:background .25s,transform .25s}
+.btn-home:hover{background:#FFB115;transform:translateY(-1px)}
+.hero{background:radial-gradient(ellipse 60% 80% at 80% 0%,rgba(245,162,1,.10),transparent 60%),var(--bg);padding:clamp(3rem,7vw,4.5rem) 0 clamp(2rem,4vw,3rem);text-align:center}
+.kicker{font-family:var(--fd);font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+h1{font-family:var(--fd);font-weight:800;font-size:clamp(2rem,5vw,3rem);letter-spacing:-.03em;line-height:1.08;margin:.7rem 0 .8rem}
+.hero p{color:var(--muted);max-width:60ch;margin:0 auto}
+.updated{display:inline-block;margin-top:1.1rem;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;background:#fff}
+main{padding:clamp(2rem,4vw,3rem) 0 clamp(3rem,6vw,4.5rem)}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:0 6px 18px -10px rgba(20,20,25,.12);margin-bottom:14px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem 1.3rem;font-family:var(--fd);font-weight:700;font-size:1rem;letter-spacing:-.01em}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .chev{flex:none;width:26px;height:26px;border:1px solid var(--line2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:transform .3s var(--ease,cubic-bezier(.22,1,.36,1)),background .25s,color .25s;font-size:.9rem}
+.faq-item[open] summary .chev{transform:rotate(45deg);background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.faq-item[open] summary{border-bottom:1px solid var(--line)}
+.faq-body{padding:1.1rem 1.3rem 1.3rem;font-size:.94rem;color:#3A3941}
+.faq-body a{color:var(--gold-deep);font-weight:600;word-break:break-word}
+.faq-body p+p{margin-top:.7rem}
+.notice{border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:var(--r-md);padding:1.05rem 1.2rem;margin:1.4rem 0 0}
+.notice p{font-size:.86rem;color:var(--text)}
+.notice p strong{font-family:var(--fd)}
+.contact-cta{margin-top:2rem;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:var(--r-md);padding:1.4rem;text-align:center}
+.contact-cta b{font-family:var(--fd);font-weight:800;font-size:1.1rem;display:block;margin-bottom:.3rem}
+.contact-cta p{font-size:.9rem;color:#3A3941;margin-bottom:1rem}
+.contact-cta a.btn{display:inline-block;font-family:var(--fd);font-weight:700;font-size:.9rem;background:var(--gold);color:var(--gold-ink);border-radius:999px;padding:.75rem 1.5rem;text-decoration:none;transition:background .25s}
+.contact-cta a.btn:hover{background:#FFB115}
+.site-foot{border-top:1px solid var(--line);background:var(--bg2);margin-top:clamp(2rem,5vw,3.5rem)}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.4rem;padding:1.6rem 1rem .8rem}
+.foot-links a{text-decoration:none;color:var(--muted);font-size:.86rem;font-weight:500;transition:color .25s}
+.foot-links a:hover{color:var(--gold-deep)}
+.foot-bottom{text-align:center;font-size:.76rem;color:var(--muted);padding:.6rem 1rem 2rem;max-width:80ch;margin:0 auto}
+</style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="nav-container">
-            <a href="https://tokenrush.online/" class="logo">
-                <img src="https://www.dropbox.com/scl/fi/l5nd55mp7iifueem84n7n/3194018_ico.png?rlkey=hi6cqhhwjnlqxs1q50e14mkoc&st=sq9bmh6y&raw=1" alt="Token Rush App Icon" class="logo-icon" width="44" height="44">
-                Token Rush
-            </a>
-            <nav class="nav-links" style="display: flex; gap: 32px; list-style: none;">
-                <li><a href="https://tokenrush.online/#play-games">Play Games</a></li>
-                <li><a href="about-us.html">About</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
-            </nav>
-            <button class="mobile-menu-btn" id="menuToggle" aria-label="Open Menu">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
-        </div>
-    </header>
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="https://tokenrush.online/">
+      <img src="https://www.dropbox.com/scl/fi/l5nd55mp7iifueem84n7n/3194018_ico.png?rlkey=hi6cqhhwjnlqxs1q50e14mkoc&st=sq9bmh6y&raw=1" alt="Token Rush logo">
+      <b>Token<i>Rush</i></b>
+    </a>
+    <a class="btn-home" href="https://tokenrush.online/">← Back to Home</a>
+  </div>
+</header>
 
-    <!-- Mobile Nav -->
-    <div class="overlay" id="overlay"></div>
-    <nav class="mobile-nav" id="mobileNav">
-        <ul>
-            <li><a href="https://tokenrush.online/">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="contact-us.html">Contact Us</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
-            <li><a href="disclaimer.html">Disclaimer</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-            <li><a href="dmca.html">DMCA</a></li>
-            <li><a href="refund-policy.html">Refund Policy</a></li>
-        </ul>
-    </nav>
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">FAQ</span>
+    <h1>Frequently asked questions.</h1>
+    <p>Honest answers about games, rewards, the Android app, ads and cookies.</p>
+    <span class="updated">Last updated: August 28, 2026</span>
+  </div>
+</section>
 
-    <!-- Main Content -->
-    <main class="legal-container">
-        <div class="legal-header">
-            <div class="legal-badge">Help Center</div>
-            <h1>Frequently Asked Questions</h1>
-        </div>
+<main>
+  <div class="wrap">
 
-        <p>Welcome to the Token Rush FAQ! Here you'll find quick answers to the most common questions about our platform.</p>
+    <details class="faq-item" open>
+      <summary>What is Token Rush?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>Token Rush is a free online gaming website (<a href="https://tokenrush.online/">https://tokenrush.online/</a>) made for Indian Gamers. It lets you discover and instantly play a large collection of fun browser games — no account, download or payment required to play on the website. There is also a separate Token Rush Android application with its own game collection and features. See our <a href="about-us.html">About Us page</a> for details.</p>
+      </div>
+    </details>
 
-        <h2>What is Token Rush?</h2>
-        <p>Token Rush is a free online gaming platform where users can play a wide variety of HTML5 games directly from their web browsers. It is designed specifically for Indian gamers who want instant access to casual and competitive gaming experiences without the need to download large files or apps.</p>
+    <details class="faq-item">
+      <summary>How many games are available on the website?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>The website may provide access to 2000+ games depending on the available game feeds. The actual number can change, because games come from third-party providers and their catalogs evolve over time.</p>
+      </div>
+    </details>
 
-        <h2>Are the games free to play?</h2>
-        <p>Yes, all games available on Token Rush are free to play. You can enjoy our entire gaming library without any subscription fees or hidden charges.</p>
+    <details class="faq-item">
+      <summary>How many games are available in the Android app?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>The Android app may contain 200+ games. The app collection may differ from the website's collection — the two products do not necessarily share the same games.</p>
+      </div>
+    </details>
 
-        <h2>How do I play a game?</h2>
-        <p>Simply navigate to the "Play Games" section on our homepage, browse the available games, and click on any game card. The game will open instantly in a fullscreen in-app viewer. No downloads are required.</p>
+    <details class="faq-item">
+      <summary>Are all website games available in the Android app?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>No. Website and app game collections may be different. Downloading the app does not grant access to the website's full game collection, and website games are not guaranteed to be included in the app.</p>
+      </div>
+    </details>
 
-        <h2>Does the website require an account?</h2>
-        <p>No, you do not need to create an account to play games on Token Rush. Our platform is designed to be accessible instantly without any login or registration process.</p>
+    <details class="faq-item">
+      <summary>Does the website directly provide cash rewards?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>No. The website itself does not guarantee or directly provide cash, gift cards, game currency or other rewards merely for playing its online games. Token Rush is an entertainment platform — it is not gambling, involves no real-money wagering, and no purchase is required to play.</p>
+      </div>
+    </details>
 
-        <h2>Are tokens or rewards available on the platform?</h2>
-        <p>Token Rush is an entertainment platform. While the name suggests "tokens," any token or point systems within specific games are strictly for in-game entertainment purposes. We do not guarantee any real-world value, cash earnings, or guaranteed winnings from these features.</p>
+    <details class="faq-item">
+      <summary>Where are reward features available?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>Reward-related features may be available within the Token Rush Android application, subject to eligibility, availability and applicable terms. Rewards, gifts, promotional benefits and other reward-related features referenced by Token Rush are features of the Android application where applicable. Website games should not be interpreted as a direct guarantee of cash, gift cards, game currency or other rewards, and no specific reward or outcome is guaranteed.</p>
+      </div>
+    </details>
 
-        <h2>How is my user information handled?</h2>
-        <p>We respect your privacy. Since you do not need to create an account to play, we collect minimal information. We may use cookies to improve site performance and analytics. For more details, please review our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <details class="faq-item">
+      <summary>Do I need an account to play?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>No. The website requires no registration, login or payment. Pick a game and play it instantly in your browser.</p>
+      </div>
+    </details>
 
-        <h2>Does Token Rush use cookies?</h2>
-        <p>Yes, we use cookies to enhance your browsing experience, remember preferences, and understand how the site is used. You can manage or disable cookies through your browser settings. Read our <a href="cookie-policy.html">Cookie Policy</a> for more information.</p>
+    <details class="faq-item">
+      <summary>Does Token Rush use advertisements?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>Token Rush may use Google AdSense and/or other advertising providers from time to time. Advertising providers may use cookies or similar technologies to provide, measure or personalize advertisements, subject to their own policies and applicable settings/laws. Token Rush does not control every advertisement displayed and makes no guarantee about ad quality or availability. See our <a href="privacy-policy.html">Privacy Policy</a> for more information.</p>
+      </div>
+    </details>
 
-        <h2>How can I report copyright content?</h2>
-        <p>If you believe that content on Token Rush infringes on your copyright, please refer to our <a href="dmca.html">DMCA Policy</a> for instructions on how to submit a valid takedown notice.</p>
+    <details class="faq-item">
+      <summary>Does Token Rush use cookies?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>Yes — cookies and similar technologies may be used for basic functionality, and by third-party services (such as game feeds, embedded videos and advertising providers) for their own purposes. Which cookies you encounter depends on the services active during your visit. You can manage or delete cookies through your browser settings, though disabling them may affect how some embedded games or videos work. Full details are in our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      </div>
+    </details>
 
-        <h2>How can I contact support?</h2>
-        <p>If you have any technical issues, questions, or feedback, please visit our <a href="contact-us.html">Contact Us</a> page to reach out to our team directly via email or phone.</p>
-    </main>
+    <details class="faq-item">
+      <summary>Can users copy and share game URLs?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>Users may copy and share publicly accessible game URLs where permitted by the applicable third-party game/provider terms. Token Rush does not intentionally restrict ordinary URL copying/sharing functionality — the website's Copy and Share buttons work freely, with no login, permission, paywall or artificial limitation required.</p>
+      </div>
+    </details>
 
-    <!-- Footer -->
-    <footer>
-        <nav class="footer-nav">
-            <a href="about-us.html">About Us</a>
-            <a href="contact-us.html">Contact Us</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-and-conditions.html">Terms & Conditions</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="cookie-policy.html">Cookie Policy</a>
-            <a href="faq.html">FAQ</a>
-            <a href="dmca.html">DMCA</a>
-            <a href="refund-policy.html">Refund Policy</a>
-        </nav>
-        <div class="footer-copyright">
-            <p>&copy; 2026 Token Rush. All Rights Reserved.</p>
-            <p>Designed for Indian Gamers.</p>
-        </div>
-    </footer>
+    <details class="faq-item">
+      <summary>Do the games belong to Token Rush?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>No. Games displayed on the website are provided by third-party providers through their public game feeds and remain the property of their respective owners. Token Rush does not claim ownership of third-party games, trademarks or content, and is not affiliated with Google, Amazon, Garena, Krafton, GamePix, GameMonetize, YouTube or any other third-party company. See our <a href="dmca.html">DMCA page</a> for copyright concerns.</p>
+      </div>
+    </details>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        const overlay = document.getElementById('overlay');
+    <details class="faq-item">
+      <summary>Why did a game stop working or disappear?<span class="chev">+</span></summary>
+      <div class="faq-body">
+        <p>Games are hosted by third-party providers, so they may occasionally be updated, moved or removed. Try reloading the page or trying a different browser; if a problem persists, let us know via our <a href="contact-us.html">Contact page</a> and we'll look into it.</p>
+      </div>
+    </details>
 
-        menuToggle.addEventListener('click', () => {
-            mobileNav.classList.add('open');
-            overlay.classList.add('active');
-        });
+    <div class="notice">
+      <p><strong>Reminder:</strong> Website and app game collections may differ. The website may provide access to 2000+ games depending on available feeds, while the Android app may contain 200+ games. Availability and quantity can change over time, and no specific game, reward or outcome is guaranteed.</p>
+    </div>
 
-        overlay.addEventListener('click', () => {
-            mobileNav.classList.remove('open');
-            overlay.classList.remove('active');
-        });
-    </script>
+    <div class="contact-cta">
+      <b>Didn't find your answer?</b>
+      <p>Send us your question and we'll get back to you.</p>
+      <a class="btn" href="contact-us.html">Contact Us</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <nav class="foot-links" aria-label="Legal and info pages">
+    <a href="about-us.html">About Us</a>
+    <a href="contact-us.html">Contact Us</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="cookie-policy.html">Cookie Policy</a>
+    <a href="faq.html">FAQ</a>
+    <a href="dmca.html">DMCA</a>
+    <a href="refund-policy.html">Refund Policy</a>
+    <a href="https://tokenrush.online/">Home</a>
+  </nav>
+  <p class="foot-bottom">© 2026 Token Rush · tokenrush.online — All rights reserved. Third-party games, trademarks and content belong to their respective owners. Token Rush is an entertainment platform, not gambling; no purchase is required to play and no rewards are guaranteed.</p>
+</footer>
+
 </body>
 </html>
