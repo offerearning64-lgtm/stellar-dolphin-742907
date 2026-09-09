@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Token Rush – Play Free Online Games | Free Browser Games</title>
-<meta name="description" content="Play free online games on Token Rush! Enjoy 100+ free browser games — puzzle, action, racing, arcade, sports & more. Play games online instantly on mobile & desktop. No download, no signup.">
+<meta name="description" content="Play free online games on Token Rush! Discover free browser games — puzzle, action, racing, arcade, sports & more. Play games online instantly on mobile & desktop. No download, no signup.">
 <meta name="keywords" content="free games, play free games, free online games, play games online, browser games, free browser games, online games, games to play, html5 games, mobile browser games, instant play games, fun games online">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="google" content="notranslate">
@@ -56,7 +56,7 @@
   "isFamilyFriendly":true,
   "potentialAction":{
     "@type":"SearchAction",
-    "target":{"@type":"EntryPoint","urlTemplate":"https://tokenrush.online/#/games?search={search_term_string}"},
+    "target":{"@type":"EntryPoint","urlTemplate":"https://tokenrush.online/#games?search={search_term_string}"},
     "query-input":"required name=search_term_string"
   }
 }
@@ -72,12 +72,24 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"Gaming Guides & Editorial Insights",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"How to Boost Browser Gaming Performance","url":"https://tokenrush.online/guide-browser-gaming-performance.html"},
+    {"@type":"ListItem","position":2,"name":"Puzzle & Strategy Tactics for Online Games","url":"https://tokenrush.online/guide-puzzle-and-strategy-tactics.html"},
+    {"@type":"ListItem","position":3,"name":"A Guide to Safe Online Casual Gaming","url":"https://tokenrush.online/guide-safe-online-casual-gaming.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
     {"@type":"Question","name":"Do I need to download or install anything to play?","acceptedAnswer":{"@type":"Answer","text":"No. Every game on Token Rush runs directly in your browser tab using HTML5. Open a game's page and press Play Now."}},
     {"@type":"Question","name":"Is Token Rush free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every game in the collection is free to play. The platform is supported by ads, which is what keeps the games free."}},
-    {"@type":"Question","name":"Does Token Rush work on phones and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The site and its games are built for mobile browsers. Some action and racing games play best with your device turned sideways."}},
-    {"@type":"Question","name":"Where do the games come from?","acceptedAnswer":{"@type":"Answer","text":"Games are curated from established HTML5 game networks such as GamePix and GameMonetize, and run from their original sources."}},
+    {"@type":"Question","name":"What are Token Rush originals?","acceptedAnswer":{"@type":"Answer","text":"Originals are games built and hosted directly on tokenrush.online. They load fastest and are marked with an Original badge."}},
+    {"@type":"Question","name":"Where do the other games come from?","acceptedAnswer":{"@type":"Answer","text":"Partner titles are curated from established HTML5 game networks such as GamePix and GameMonetize, and run from their original sources."}},
     {"@type":"Question","name":"How do I start playing?","acceptedAnswer":{"@type":"Answer","text":"Browse the collection or search, open a game's page to read about it, then press Play Now. The game loads in your browser."}}
   ]
 }
@@ -87,7 +99,6 @@
 <style>
 :root{
   color-scheme:light;
-  /* ============ LIGHT THEME (default) ============ */
   --bg:#f6f7f9; --bg2:#ffffff; --surface:#ffffff; --surface2:#eef0f4;
   --line:rgba(16,24,32,.1); --line-soft:rgba(16,24,32,.06);
   --text:#131a21; --muted:#5d6873;
@@ -111,7 +122,6 @@
 }
 html[data-theme="dark"]{
   color-scheme:dark;
-  /* ============ NIGHT THEME ============ */
   --bg:#0b0e12; --bg2:#10141a; --surface:#161b22; --surface2:#1d232c;
   --line:rgba(255,255,255,.09); --line-soft:rgba(255,255,255,.05);
   --text:#eef1f3; --muted:#97a1ab;
@@ -133,12 +143,10 @@ html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}
 body{
   background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.55;font-size:16px;overflow-x:clip;
   transition:background .25s,color .25s;
-  /* ===== no accidental text-copy / selection on tap ===== */
   -webkit-user-select:none;user-select:none;
   -webkit-touch-callout:none;
   -webkit-tap-highlight-color:transparent;
 }
-/* typing inside inputs must still work naturally */
 input,textarea{ -webkit-user-select:text;user-select:text; }
 img{max-width:100%;display:block;-webkit-user-drag:none;user-drag:none}
 a{color:inherit}
@@ -147,7 +155,6 @@ button{font-family:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent-text);outline-offset:2px;border-radius:4px}
 section[id]{scroll-margin-top:84px}
 
-/* ============ animations ============ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes popIn{from{opacity:0;transform:translateY(-8px) scale(.96)}to{opacity:1;transform:none}}
 @keyframes imgIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
@@ -170,7 +177,6 @@ section[id]{scroll-margin-top:84px}
 .noscript-box{background:#fbeaea;border:1px solid rgba(200,60,60,.3);color:#8c2b2b;padding:14px 18px;border-radius:12px;margin:16px auto;max-width:720px;text-align:center}
 html[data-theme="dark"] .noscript-box{background:#2a1d1d;border-color:rgba(255,120,120,.3);color:#f3c9c9}
 
-/* ---------- buttons & chips ---------- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent-bg);color:var(--accent-ink);font-weight:800;font-size:.92rem;border:0;border-radius:12px;min-height:46px;padding:12px 22px;cursor:pointer;text-decoration:none;transition:transform .15s,filter .15s,box-shadow .15s;-webkit-user-select:none;user-select:none}
 .btn:hover{filter:brightness(1.05);transform:translateY(-1px);box-shadow:var(--shadow-1)}
 .btn:active{transform:scale(.97)}
@@ -185,13 +191,12 @@ html[data-theme="dark"] .noscript-box{background:#2a1d1d;border-color:rgba(255,1
 html[data-theme="dark"] .chip{border-color:rgba(216,255,62,.28)}
 .chip-glass{background:rgba(8,10,12,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-color:rgba(255,255,255,.22);color:#f2f6e8}
 
-/* ---------- header (logo + three-dot only — clean) ---------- */
 .site-header{position:sticky;top:0;z-index:60;background:var(--bg2);border-bottom:1px solid var(--line);padding-top:var(--sat)}
-.header-in{display:flex;align-items:center;gap:10px;height:70px}
+.header-in{display:flex;align-items:center;gap:8px;height:70px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;min-width:0;-webkit-user-select:none;user-select:none}
 .brand-mark{width:40px;height:40px;color:var(--accent-text);flex:0 0 auto}
 html[data-theme="dark"] .brand-mark{color:#d8ff3e}
-.brand-name{font-family:var(--disp);font-weight:800;font-size:clamp(1.3rem,5vw,1.6rem);letter-spacing:.01em;white-space:nowrap;line-height:1}
+.brand-name{font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,4.6vw,1.5rem);letter-spacing:.01em;white-space:nowrap;line-height:1}
 .brand-name .t1{color:var(--text)}
 .brand-name .t2{color:var(--accent-text);display:inline-block;transform:rotate(-2deg)}
 html[data-theme="dark"] .brand-name .t2{color:#d8ff3e}
@@ -199,9 +204,13 @@ html[data-theme="dark"] .brand-name .t2{color:#d8ff3e}
   .brand:hover .brand-mark{transform:rotate(-8deg) scale(1.06)}
   .brand-mark{transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
 }
-/* three-dot overflow menu */
+.main-nav{display:none;gap:2px}
+.main-nav a{color:var(--muted);text-decoration:none;font-weight:700;font-size:.88rem;padding:8px 11px;border-radius:9px;transition:color .2s,background .2s;white-space:nowrap}
+.main-nav a:hover{color:var(--text);background:var(--surface2)}
+.main-nav a.nav-cta{color:var(--accent-text);font-weight:800}
+@media(min-width:1020px){.main-nav{display:flex}.nav-burger{display:none}}
 .more-wrap{position:relative;flex:0 0 auto}
-.more-menu{position:absolute;top:calc(100% + 10px);right:0;width:min(78vw,250px);background:var(--bg2);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-3);padding:8px;display:grid;gap:2px;z-index:65;animation:popIn .22s cubic-bezier(.22,.61,.36,1) both}
+.more-menu{position:absolute;top:calc(100% + 10px);right:0;width:min(78vw,260px);background:var(--bg2);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-3);padding:8px;display:grid;gap:2px;z-index:65;animation:popIn .22s cubic-bezier(.22,.61,.36,1) both}
 .more-h{font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding:8px 12px 4px}
 .more-item{display:flex;align-items:center;gap:12px;width:100%;min-height:46px;padding:12px;background:none;border:0;border-radius:11px;font-weight:800;font-size:.93rem;color:var(--text);cursor:pointer;text-align:left;text-decoration:none;transition:background .2s,color .2s;-webkit-user-select:none;user-select:none}
 .more-item:hover{background:var(--surface2);color:var(--accent-text)}
@@ -210,7 +219,6 @@ html[data-theme="dark"] .brand-name .t2{color:#d8ff3e}
 .more-item:hover svg{color:var(--accent-text)}
 .more-sep{height:1px;background:var(--line-soft);margin:5px 8px}
 
-/* ---------- hero ---------- */
 .hero{position:relative;padding:clamp(42px,9vw,68px) 0 34px}
 .hero-title{font-family:var(--disp);font-weight:800;font-size:clamp(2.7rem,12vw,5.4rem);line-height:1.02;letter-spacing:-.01em;margin:16px 0 20px}
 .hero-title .row{display:block}
@@ -218,9 +226,8 @@ html[data-theme="dark"] .brand-name .t2{color:#d8ff3e}
 html[data-theme="dark"] .hero-title .hl{color:#d8ff3e}
 .hero-title .hl svg{position:absolute;left:4%;bottom:-.28em;width:92%;height:.32em;color:var(--accent-bg);overflow:visible}
 .hero-sub{color:var(--muted);max-width:52ch;font-size:clamp(.95rem,2.6vw,1.08rem);margin-bottom:26px}
-.hero-actions{display:flex;gap:12px;align-items:center}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 
-/* ---------- marquee ---------- */
 .marquee{overflow:hidden;display:grid;gap:12px;padding:14px 0 4px;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
@@ -232,13 +239,11 @@ html[data-theme="dark"] .hero-title .hl{color:#d8ff3e}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.mq-row{animation:none}}
 
-/* ---------- sections ---------- */
 .section{padding-top:60px}
 .sec-head{margin-bottom:20px}
 .sec-head h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.35rem,4.2vw,1.9rem);margin-top:8px;letter-spacing:-.01em}
 .sec-head.center{text-align:center}
 
-/* ---------- carousel ---------- */
 .carousel{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surface);height:clamp(300px,42vw,430px);box-shadow:var(--shadow-2)}
 .car-track{display:flex;height:100%;touch-action:pan-y;cursor:grab}
 .car-track:active{cursor:grabbing}
@@ -257,7 +262,6 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 .car-dot.on::before{background:var(--accent-text);width:22px}
 .car-arrows{display:flex;gap:8px}
 
-/* ---------- category strip ---------- */
 .cat-strip{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(160px,13.5vw,200px);gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
 .cat-strip::-webkit-scrollbar{display:none}
 .cat-card{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);cursor:pointer;text-align:left;transition:border-color .2s,transform .2s,box-shadow .2s;-webkit-user-select:none;user-select:none}
@@ -269,7 +273,6 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 .cat-name{font-family:var(--disp);font-weight:700;font-size:.92rem}
 .cat-count{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap}
 
-/* ---------- game grid & cards ---------- */
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .chip-f{flex:0 0 auto;min-height:42px;padding:9px 16px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-weight:800;font-size:.82rem;cursor:pointer;transition:all .2s;-webkit-user-select:none;user-select:none}
@@ -289,6 +292,8 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 .card-media img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s;image-rendering:auto}
 .card:hover .card-media img{transform:scale(1.05)}
 .card-cat{position:absolute;top:8px;left:8px;font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:rgba(8,10,12,.6);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.18);color:#e9f0da;padding:3px 8px;border-radius:99px;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-local{position:absolute;top:8px;right:8px;font-size:.56rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(163,217,15,.92);color:#101400;padding:3px 8px;border-radius:99px}
+html[data-theme="dark"] .card-local{background:#d8ff3e}
 .card-body{padding:12px 12px 13px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card-title{font-size:.92rem;font-weight:800;line-height:1.32;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card-desc{font-size:.78rem;color:var(--muted);line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -298,11 +303,27 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 @media(min-width:1000px){.grid-rel{grid-template-columns:repeat(6,1fr)}}
 .load-wrap{display:grid;justify-items:center;gap:10px;padding-top:26px}
 .state-line{color:var(--muted);padding:22px 4px;grid-column:1/-1}
-.state-box{border:1px dashed var(--line);border-radius:16px;padding:40px 24px;text-align:center;max-width:540px;margin:10px auto;background:var(--surface)}
-.state-box h3{font-family:var(--disp);font-weight:700;font-size:1.15rem;margin-bottom:8px}
-.state-box p{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.state-box{border:1px dashed var(--line);border-radius:16px;padding:32px 24px;text-align:center;max-width:540px;margin:10px auto;background:var(--surface)}
+.state-box h3{font-family:var(--disp);font-weight:700;font-size:1.1rem;margin-bottom:8px}
+.state-box p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
 
-/* ---------- skeletons ---------- */
+.g-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:700px){.g-grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+.gcard{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-decoration:none;color:var(--text);transition:transform .25s,border-color .25s,box-shadow .25s;-webkit-user-select:none;user-select:none}
+.gcard:hover{transform:translateY(-3px);border-color:var(--accent-text);box-shadow:var(--shadow-2)}
+.gcard:active{transform:scale(.98)}
+.gcard h3{font-family:var(--disp);font-weight:700;font-size:1.02rem;line-height:1.3}
+.gcard p{color:var(--muted);font-size:.86rem;line-height:1.55}
+.gcard .card-cta{margin-top:auto;padding-top:8px}
+.g-all{margin-top:16px}
+.editorial h3,.editorial-hub h3{font-family:var(--disp);font-weight:700;font-size:clamp(1.05rem,3vw,1.25rem);margin:26px 0 10px;padding-left:12px;border-left:3px solid var(--accent-bg)}
+.editorial h3:first-of-type,.editorial-hub h3:first-of-type{margin-top:0}
+.editorial p,.editorial-hub p{color:var(--muted);line-height:1.75;margin-bottom:14px;max-width:70ch}
+.editorial ul,.editorial-hub ul{color:var(--muted);margin:0 0 16px;padding-left:22px;max-width:70ch}
+.editorial li,.editorial-hub li{margin-bottom:8px;line-height:1.6}
+.editorial a,.editorial-hub a{color:var(--accent-text);font-weight:700;text-decoration:none}
+.editorial a:hover,.editorial-hub a:hover{text-decoration:underline}
+
 .skel{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
 .skel::after{content:'';position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,var(--skel-shine),transparent);animation:shine 1.5s infinite}
 @keyframes shine{to{transform:translateX(100%)}}
@@ -311,7 +332,6 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 .skel-cat{height:150px}
 @media(prefers-reduced-motion:reduce){.skel::after{animation:none}}
 
-/* ---------- guide / faq ---------- */
 .guide-band{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 0;margin-top:64px}
 .guide-cols{display:grid;gap:36px}
 @media(min-width:920px){.guide-cols{grid-template-columns:1.05fr .95fr;gap:56px}}
@@ -326,7 +346,6 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 .faq details[open] summary::after{content:'\2013'}
 .faq details p{padding:0 16px 15px;color:var(--muted);line-height:1.65;font-size:.9rem}
 
-/* ---------- youtube ---------- */
 .video-sec .sec-head{margin-bottom:22px}
 .yt-wrap{position:relative;aspect-ratio:16/9;max-width:880px;border-radius:16px;overflow:hidden;border:1px solid var(--line);margin:0 auto;background:#000;box-shadow:var(--shadow-2)}
 .yt-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -336,7 +355,6 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 .yt-play span{width:70px;height:70px;border-radius:50%;background:rgba(10,12,14,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;color:#d8ff3e;border:1px solid rgba(255,255,255,.25);transition:transform .25s,background .25s}
 .yt-facade:hover .yt-play span{transform:scale(1.08);background:rgba(10,12,14,.8)}
 
-/* ---------- footer ---------- */
 .site-footer{border-top:1px solid var(--line);margin-top:80px;background:var(--bg2);position:relative}
 .footer-in{padding:48px 0 34px;display:grid;gap:32px}
 @media(min-width:820px){.footer-in{grid-template-columns:1.2fr 1fr}}
@@ -345,17 +363,12 @@ html[data-theme="dark"] .car-cta{color:#d8ff3e}
 .footer-links{display:flex;flex-wrap:wrap;gap:4px 22px}
 .footer-links a,.footer-share{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:600;padding:6px 0;background:none;border:0;cursor:pointer;transition:color .2s;text-align:left}
 .footer-links a:hover,.footer-share:hover{color:var(--accent-text)}
-.footer-apk{display:inline-flex;align-items:center;gap:7px;margin-top:14px;min-height:42px;padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--muted);font-weight:800;font-size:.8rem;text-decoration:none;transition:border-color .2s,color .2s,transform .15s;-webkit-user-select:none;user-select:none}
-.footer-apk:hover{border-color:var(--accent-text);color:var(--accent-text)}
-.footer-apk:active{transform:scale(.97)}
 .footer-bottom{border-top:1px solid var(--line);padding:18px 0 calc(18px + var(--sab));color:var(--muted);font-size:.78rem;display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
 
-/* ---------- detail view ---------- */
 .back-row{padding:calc(16px + var(--sat)) 0 14px}
-.back-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--muted);font-weight:800;font-size:.88rem;min-height:44px;cursor:pointer;padding:8px 12px 8px 6px;border-radius:9px;transition:color .2s,transform .15s;-webkit-user-select:none;user-select:none}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--muted);font-weight:800;font-size:.88rem;min-height:44px;cursor:pointer;padding:8px 12px 8px 6px;border-radius:9px;transition:color .2s,transform .15s;-webkit-user-select:none;user-select:none;text-decoration:none}
 .back-btn:hover{color:var(--text)}
 .back-btn:active{transform:scale(.95)}
-/* ONE primary artwork — aspect-ratio-preserving media card */
 .d-hero{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);
   background:radial-gradient(120% 140% at 50% 0%,var(--hero-a) 0%,var(--hero-b) 60%,var(--hero-b) 100%);
   box-shadow:var(--shadow-3);
@@ -368,10 +381,9 @@ html[data-theme="dark"] .d-hero::before{background:linear-gradient(180deg,rgba(2
 .detail-meta{color:var(--muted);font-size:.85rem;font-weight:700}
 .detail-cols{display:grid;gap:30px;margin-top:26px}
 @media(min-width:940px){.detail-cols{grid-template-columns:minmax(0,1fr) 320px}.detail-main{order:-1}}
-/* actions card — no repeated artwork */
 .action-card{background:var(--card-grad),var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow-1)}
 .act-row{display:flex;gap:8px;margin-top:10px}
-.act-btn{flex:1;min-width:0;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--surface2);border:1px solid var(--line);border-radius:11px;color:var(--text);font-weight:800;font-size:.82rem;cursor:pointer;transition:border-color .2s,color .2s,transform .15s;white-space:nowrap;padding:0 8px;-webkit-user-select:none;user-select:none}
+.act-btn{flex:1;min-width:0;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:var(--surface2);border:1px solid var(--line);border-radius:11px;color:var(--text);font-weight:800;font-size:.82rem;cursor:pointer;transition:border-color .2s,color .2s,transform .15s;white-space:nowrap;padding:0 8px;-webkit-user-select:none;user-select:none;text-decoration:none}
 .act-btn:hover{border-color:var(--accent-text);color:var(--accent-text)}
 .act-btn:active{transform:scale(.96)}
 .act-btn.done{border-color:var(--accent-text);color:var(--accent-text)}
@@ -403,7 +415,6 @@ html[data-theme="dark"] .tip{border-color:rgba(216,255,62,.2)}
 .spinner{width:42px;height:42px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--accent-text);animation:spin .9s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ---------- search overlay ---------- */
 .search-overlay{position:fixed;inset:0;z-index:70;background:rgba(10,14,18,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:flex-start;animation:fadeIn .2s ease both}
 html[data-theme="dark"] .search-overlay{background:rgba(4,5,7,.7)}
 .search-panel{background:var(--bg2);border-bottom:1px solid var(--line);width:100%;max-height:min(86dvh,780px);display:flex;flex-direction:column;border-radius:0 0 18px 18px;box-shadow:var(--shadow-3)}
@@ -423,7 +434,6 @@ html[data-theme="dark"] .search-overlay{background:rgba(4,5,7,.7)}
 .mini-c{font-size:.66rem;color:var(--muted);padding:0 11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
 .search-hint{color:var(--muted);padding:20px 2px;font-size:.9rem;font-weight:600}
 
-/* ---------- share modal ---------- */
 .share-overlay{position:fixed;inset:0;z-index:75;background:rgba(10,14,18,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:18px;animation:fadeIn .2s ease both}
 html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
 .share-panel{background:var(--bg2);border:1px solid var(--line);width:min(94vw,400px);border-radius:16px;overflow:hidden;animation:fadeUp .3s cubic-bezier(.22,.61,.36,1) both;box-shadow:var(--shadow-3)}
@@ -436,11 +446,9 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
 .share-opt:active{background:var(--surface2)}
 .share-opt svg{flex:0 0 auto}
 
-/* ---------- toast ---------- */
 #toast{position:fixed;left:50%;bottom:calc(26px + var(--sab));transform:translate(-50%,14px);background:var(--toast-bg);color:var(--toast-fg);font-weight:800;font-size:.85rem;padding:12px 20px;border-radius:99px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:95;box-shadow:var(--shadow-2);white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 
-/* ---------- player (always dark for game clarity) ---------- */
 .player{position:fixed;inset:0;z-index:80;background:#07090b;display:flex;flex-direction:column;height:100dvh;color:#eef1f3;-webkit-user-select:none;user-select:none}
 @supports not (height:100dvh){.player{height:100vh}}
 .player-bar{display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.09);background:#0d1014;flex:0 0 auto;
@@ -460,7 +468,6 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
 .rotate-hint{position:absolute;left:50%;bottom:calc(18px + var(--sab));transform:translateX(-50%);background:rgba(20,24,29,.95);border:1px solid rgba(255,255,255,.09);padding:10px 16px;border-radius:12px;display:flex;gap:10px;align-items:center;font-size:.83rem;font-weight:700;z-index:3;white-space:nowrap;color:#eef1f3}
 .rotate-hint svg{color:#d8ff3e}
 
-/* ============ mobile polish ============ */
 @media(max-width:480px){
   .section{padding-top:46px}
   .guide-band{margin-top:48px;padding:44px 0}
@@ -490,7 +497,7 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
 
 <header class="site-header">
   <div class="container header-in">
-    <a class="brand" href="#/" aria-label="Token Rush – play free online games">
+    <a class="brand" href="/" aria-label="Token Rush – play free online games">
       <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <path d="M3 20.5C3 15 8 11.5 13.5 11.5h13C32 11.5 37 15 37 20.5S32 29.5 26.5 29.5h-13C8 29.5 3 26 3 20.5Z" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
         <path d="M12.5 17.5v6M9.5 20.5h6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
@@ -499,6 +506,13 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
       </svg>
       <span class="brand-name"><span class="t1">Token</span> <span class="t2">Rush</span></span>
     </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="#games">Play Games</a>
+      <a href="#categories">Categories</a>
+      <a class="nav-cta" href="guides.html">Gaming Guides</a>
+      <a href="about-us.html">About</a>
+    </nav>
     <div class="more-wrap">
       <button class="icon-btn" data-action="more" id="moreBtn" aria-label="More options" aria-expanded="false" aria-controls="moreMenu">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
@@ -506,19 +520,42 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
         </svg>
       </button>
       <div class="more-menu" id="moreMenu" hidden role="menu" aria-label="Site menu">
-        <p class="more-h">Menu</p>
-        <a class="more-item" href="#/" role="menuitem">
-          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
-          Home
-        </a>
-        <a class="more-item" href="#/games" role="menuitem">
+        <p class="more-h">Play</p>
+        <a class="more-item" href="#games" role="menuitem">
           <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17.5c0-4 3.6-6.5 7.5-6.5h4c3.9 0 7.5 2.5 7.5 6.5s-3.6 4-7.5 4h-4c-3.9 0-7.5 0-7.5-4Z"/><path d="M8 15.5v4M6 17.5h4"/><circle cx="16.5" cy="16" r="1.4" fill="currentColor" stroke="none"/><circle cx="19.5" cy="19" r="1.4" fill="currentColor" stroke="none"/></svg>
-          All Games
+          Play Games
         </a>
-        <a class="more-item" href="#/categories" role="menuitem">
+        <a class="more-item" href="#categories" role="menuitem">
           <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg>
           Categories
         </a>
+        <div class="more-sep" role="separator"></div>
+        <p class="more-h">Site</p>
+        <a class="more-item" href="/" role="menuitem">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+          Home
+        </a>
+        <a class="more-item" href="guides.html" role="menuitem">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+          Gaming Guides
+        </a>
+        <a class="more-item" href="about-us.html" role="menuitem">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="8" r=".5" fill="currentColor"/></svg>
+          About Us
+        </a>
+        <a class="more-item" href="contact-us.html" role="menuitem">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Contact Us
+        </a>
+        <div class="more-sep" role="separator"></div>
+        <p class="more-h">Legal</p>
+        <a class="more-item" href="privacy-policy.html" role="menuitem">Privacy Policy</a>
+        <a class="more-item" href="terms-and-conditions.html" role="menuitem">Terms &amp; Conditions</a>
+        <a class="more-item" href="disclaimer.html" role="menuitem">Disclaimer</a>
+        <a class="more-item" href="cookie-policy.html" role="menuitem">Cookie Policy</a>
+        <a class="more-item" href="faq.html" role="menuitem">FAQ</a>
+        <a class="more-item" href="dmca.html" role="menuitem">DMCA</a>
+        <a class="more-item" href="refund-policy.html" role="menuitem">Refund Policy</a>
         <div class="more-sep" role="separator"></div>
         <p class="more-h">Tools</p>
         <button class="more-item" data-action="search-open" role="menuitem">
@@ -585,7 +622,6 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
 <main id="main" tabindex="-1">
   <noscript><p class="noscript-box">Token Rush needs JavaScript to load its catalogue of free online games. Please enable JavaScript and reload the page.</p></noscript>
 
-  <!-- ============ HOME VIEW ============ -->
   <div id="view-home">
 
     <section class="hero container" aria-labelledby="heroTitle">
@@ -599,12 +635,13 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
           </svg>
         </span>
       </h1>
-      <p class="hero-sub">Token Rush is a curated collection of free online games you can play right in your browser — puzzle, action, arcade, racing, sports and more. Pick a game, see what it's about, press Play Now. Nothing to install, on mobile or desktop.</p>
+      <p class="hero-sub">Token Rush is a curated collection of free online games you can play right in your browser — including our own originals — plus puzzle, action, arcade, racing and sports titles from partner networks. Pick a game, see what it's about, press Play Now. Nothing to install, on mobile or desktop.</p>
       <div class="hero-actions">
         <button class="btn btn-lg" data-action="scroll-games">
           Explore Games
           <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
         </button>
+        <a class="btn btn-lg" href="guides.html" style="background:var(--surface);color:var(--accent-text);border:1px solid var(--line)">Gaming Guides</a>
       </div>
     </section>
 
@@ -615,22 +652,20 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
         <p class="overline">Featured</p>
         <h2 id="featuredH">Featured games</h2>
       </div>
-      <div id="featuredMount"><div class="car-skel skel"></div></div>
+      <div id="featuredMount"></div>
     </section>
 
-    <section class="section container" id="categoriesSection" aria-labelledby="catH">
+    <section class="section container" id="categories" aria-labelledby="catH">
       <div class="sec-head">
         <p class="overline">Categories</p>
         <h2 id="catH">Browse free games by category</h2>
       </div>
-      <div class="cat-strip" id="catStrip">
-        <div class="cat-card skel skel-cat"></div><div class="cat-card skel skel-cat"></div><div class="cat-card skel skel-cat"></div><div class="cat-card skel skel-cat"></div>
-      </div>
+      <div class="cat-strip" id="catStrip"></div>
     </section>
 
     <section class="section container" id="games" aria-labelledby="gamesH">
       <div class="sec-head">
-        <p class="overline">Discover</p>
+        <p class="overline">Discover · Token Rush originals first</p>
         <h2 id="gamesH">All games</h2>
       </div>
       <div class="chips" id="chipRow" role="group" aria-label="Filter games by category"></div>
@@ -641,12 +676,44 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
       </div>
     </section>
 
+    <section class="section container" id="guides" aria-labelledby="guidesH">
+      <div class="sec-head">
+        <p class="overline">Learn &amp; play better</p>
+        <h2 id="guidesH">Gaming Guides &amp; Editorial Insights</h2>
+      </div>
+      <div class="g-grid">
+        <a class="gcard" href="guide-browser-gaming-performance.html">
+          <span class="chip">Performance</span>
+          <h3>How to Boost Browser Gaming Performance</h3>
+          <p>Hardware acceleration, memory management, caching and browser settings that make HTML5 games run smoothly on any device.</p>
+          <span class="card-cta">Read the guide →</span>
+        </a>
+        <a class="gcard" href="guide-puzzle-and-strategy-tactics.html">
+          <span class="chip">Strategy</span>
+          <h3>Puzzle &amp; Strategy Tactics for Online Games</h3>
+          <p>Pattern recognition, planning frameworks and decision-making techniques to get better at puzzle and strategy browser games.</p>
+          <span class="card-cta">Read the guide →</span>
+        </a>
+        <a class="gcard" href="guide-safe-online-casual-gaming.html">
+          <span class="chip">Safety</span>
+          <h3>A Guide to Safe Online Casual Gaming</h3>
+          <p>Family-friendly gaming, privacy basics, ad awareness and secure browser habits for relaxed, worry-free play.</p>
+          <span class="card-cta">Read the guide →</span>
+        </a>
+      </div>
+      <div class="g-all">
+        <a class="btn" href="guides.html">View all guides
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
     <section class="guide-band" aria-labelledby="guideH">
       <div class="container guide-cols">
         <div class="prose">
           <p class="overline">Good to know</p>
           <h2 id="guideH">Playing free games on Token Rush</h2>
-          <p>Token Rush is a browser-gaming platform, and that's the whole idea: pick a game, open its page and press Play Now. Every title runs on HTML5 directly in your browser tab — free games to play with nothing to install and no account, on your phone or your computer.</p>
+          <p>Token Rush is a browser-gaming platform, and that's the whole idea: pick a game, open its page and press Play Now. Every title — our own originals and partner titles alike — runs on HTML5 directly in your browser tab, with nothing to install and no account.</p>
           <p>New to browser games? Start small. Puzzle and .io titles take thirty seconds to learn; racing and action games reward a couple of warm-up rounds. Open a game's page first — the How to Play notes tell you what you're getting into before you commit.</p>
         </div>
         <div>
@@ -661,12 +728,12 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
               <p>Yes. Every game in the collection is free to play. The platform is supported by ads, which is what keeps the games free.</p>
             </details>
             <details>
-              <summary>Does it work on phones and tablets?</summary>
-              <p>Yes. The site and its mobile browser games are built for touch. Some action and racing games play best with your device turned sideways.</p>
+              <summary>What are "Token Rush originals"?</summary>
+              <p>Originals are games we build and host ourselves on tokenrush.online. They load instantly and are marked with an "Original" badge — play them first!</p>
             </details>
             <details>
-              <summary>Where do the games come from?</summary>
-              <p>Games are curated from established HTML5 game networks such as GamePix and GameMonetize, and run from their original, unmodified sources.</p>
+              <summary>Where do the other games come from?</summary>
+              <p>Partner titles are curated from established HTML5 game networks such as GamePix and GameMonetize, and run from their original, unmodified sources.</p>
             </details>
             <details>
               <summary>How do I start playing?</summary>
@@ -675,6 +742,42 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="section container editorial editorial-hub" id="about-platform" aria-labelledby="aboutPlatformH">
+      <div class="sec-head">
+        <p class="overline">About the platform</p>
+        <h2 id="aboutPlatformH">Browser gaming, explained</h2>
+      </div>
+
+      <h3>What Token Rush is</h3>
+      <p>Token Rush is a free online gaming platform with a single focus: helping you discover and play browser games without friction. Instead of scrolling through app stores, creating accounts or waiting for downloads, you browse a curated catalogue of HTML5 titles, open the game page that interests you, read a short description of how it works, and press Play Now. The game loads directly in your browser tab — on a phone, a tablet, a laptop or a desktop computer. There is no signup, no installation and no cost; the platform is supported by advertising, which is what keeps every game free to play.</p>
+
+      <h3>Originals and partners: one hybrid catalogue</h3>
+      <p>The Token Rush catalogue is a hybrid. At the top you'll find our own games — titles we design, build and host directly on tokenrush.online, marked with an "Original" badge. Because they're served from the same domain you're already on, they load the fastest of all and remain playable even when third-party networks are having a slow day. Below them sits a large partner collection, provided by established HTML5 game networks and running from their original sources, unmodified. Both halves live in one searchable, filterable catalogue, so finding a game never depends on knowing where it came from — search and categories cover everything equally, and every entry is deduplicated so you never see the same game twice.</p>
+
+      <h3>The architecture of a browser game</h3>
+      <p>Every game here is built with standard web technologies — HTML5, JavaScript, and rendering layers such as Canvas 2D and WebGL. Canvas 2D handles the flat, sprite-based drawing that powers most arcade and puzzle titles: the game draws each frame directly into a rectangular bitmap, at whatever frame rate your device can sustain. WebGL goes a step further, handing drawing work to your device's dedicated graphics processor, which is how modern 3D and high-effects titles achieve smooth frame rates inside a plain browser tab. Audio runs through the Web Audio API, input arrives from the keyboard, mouse or touchscreen events you already know, and persistence — where a game saves your progress — uses small browser storage mechanisms on your own device. Nothing is installed on your operating system, nothing runs in the background after you close the tab, and the game behaves identically on Windows, macOS, Android or iOS because it is, at heart, a web page that plays.</p>
+
+      <h3>How the catalogue is organised</h3>
+      <p>Games are organised into real, filterable categories drawn from metadata:</p>
+      <ul>
+        <li><strong>Puzzle</strong> — match-3, logic, mahjong and brain teasers that reward patience over reflexes.</li>
+        <li><strong>Action &amp; Arcade</strong> — fast, reaction-based titles with short rounds and quick retries.</li>
+        <li><strong>Racing &amp; Sports</strong> — driving, football, basketball and more, playable with keyboard or touch controls.</li>
+        <li><strong>Strategy</strong> — tower defense and planning games for players who like to think a few moves ahead.</li>
+        <li><strong>Casual</strong> — relaxed games you can learn in thirty seconds, ideal for a short break.</li>
+      </ul>
+      <p>Each game has its own detail page with a description, how-to-play notes, control explanations, tips and related titles, so you always know roughly what you're getting into before the game even starts.</p>
+
+      <h3>Web performance standards behind smooth play</h3>
+      <p>Smooth browser gaming is a partnership between the game and your browser settings. Modern browsers ship with just-in-time JavaScript compilation, hardware-accelerated compositing and efficient image decoding — but they only help if they're up to date. Keeping your browser current, enabling hardware acceleration, and closing heavy background tabs are the three highest-impact habits any player can adopt; our <a href="guide-browser-gaming-performance.html">browser gaming performance guide</a> walks through each in detail. On the platform side, Token Rush lazy-loads game artwork, reserves layout space to prevent visual jumping, deduplicates the catalogue before rendering, and loads games only when you explicitly press Play Now — so browsing stays fast even on modest devices.</p>
+
+      <h3>Family-friendly digital entertainment</h3>
+      <p>Token Rush is designed as general-audience entertainment. There are no accounts, no chat rooms operated by the platform, and nothing to purchase here — advertising keeps the service free. For families, the practical guidance is simple: use the category system to pick age-appropriate genres, read the game's detail page together before playing, and treat any chat feature inside an individual third-party game with normal online caution. Our dedicated guide to <a href="guide-safe-online-casual-gaming.html">safe online casual gaming</a> covers privacy, advertising awareness and screen-time habits at length, and if you want to sharpen your play rather than your settings, the <a href="guide-puzzle-and-strategy-tactics.html">puzzle and strategy tactics guide</a> is the place to start.</p>
+
+      <h3>Sharing and coming back</h3>
+      <p>Every game has its own shareable link, so you can send a title to a friend with one tap — and anyone who opens that link lands on the game's detail page, never straight into a game. Your theme preference is remembered automatically between visits, and the catalogue refreshes as new originals and partner titles are added, so there is usually something new to discover. <a href="#games">Browse the collection</a>, or read the guides above to get more out of every session.</p>
     </section>
 
     <section class="section container video-sec" aria-labelledby="videoH">
@@ -692,14 +795,13 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
 
   </div>
 
-  <!-- ============ GAME DETAIL VIEW (rendered by JS) ============ -->
   <div id="view-detail" hidden></div>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-in">
     <div>
-      <a class="brand" href="#/" aria-label="Token Rush – play free online games">
+      <a class="brand" href="/" aria-label="Token Rush – play free online games">
         <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
           <path d="M3 20.5C3 15 8 11.5 13.5 11.5h13C32 11.5 37 15 37 20.5S32 29.5 26.5 29.5h-13C8 29.5 3 26 3 20.5Z" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
           <path d="M12.5 17.5v6M9.5 20.5h6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
@@ -708,15 +810,15 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
         </svg>
         <span class="brand-name"><span class="t1">Token</span> <span class="t2">Rush</span></span>
       </a>
-      <p class="footer-desc">Token Rush is a free online games platform. Discover HTML5 browser games by category, open a game page, and play instantly — no install, no signup, on mobile and desktop.</p>
-      <a class="footer-apk" href="https://apk.e-droid.net/apk/app3194018-b81752.apk?v=25" download target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
-        Download APK
-      </a>
+      <p class="footer-desc">Token Rush is a free online games platform. Play our own originals plus curated HTML5 browser games by category — open a game page and play instantly, no install, no signup.</p>
     </div>
     <div>
       <p class="footer-h">Explore</p>
       <nav class="footer-links" aria-label="Site">
+        <a href="/">Home</a>
+        <a href="#games">Play Games</a>
+        <a href="#categories">Categories</a>
+        <a href="guides.html">Gaming Guides</a>
         <a href="about-us.html">About Us</a>
         <a href="contact-us.html">Contact Us</a>
         <a href="faq.html">FAQ</a>
@@ -733,13 +835,12 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© <span id="year">2025</span> Token Rush · tokenrush.online</span>
-    <span>Games are provided by third-party HTML5 networks and remain the property of their respective developers.</span>
+    <span>© <span id="year">2026</span> Token Rush · tokenrush.online</span>
+    <span>Partner games are provided by third-party HTML5 networks and remain the property of their respective developers.</span>
     <button class="footer-share" data-action="share-site">Share Token Rush</button>
   </div>
 </footer>
 
-<!-- ============ GAME PLAYER ============ -->
 <div class="player" id="player" hidden role="dialog" aria-modal="true" aria-label="Game player">
   <div class="player-bar">
     <button class="pbtn" data-action="player-back" aria-label="Back to game details">
@@ -766,11 +867,50 @@ html[data-theme="dark"] .share-overlay{background:rgba(4,5,7,.72)}
 (function(){
 'use strict';
 
+/* ====================================================================
+   LOCAL_GAMES — Token Rush self-hosted catalogue
+   --------------------------------------------------------------------
+   GHOST-CARD RULE: only list games whose folder ACTUALLY EXISTS at
+   /games/{slug}/index.html. If a game's assets are not ready, DELETE
+   its entry here — an entry without a folder will never be shown,
+   but the cleanest catalogue lists only verified, active games.
+
+   Folder layout per game:
+     /games/{slug}/index.html   (required)
+     /games/{slug}/thumb.png    (optional 4:3 thumbnail; a styled SVG
+                                 placeholder renders automatically if
+                                 the file is missing — never a broken box)
+
+   TO ADD A GAME: append one object. Nothing else changes.
+   ==================================================================== */
+var LOCAL_GAMES=[
+  {slug:'runner',            title:'Runner Dash',         category:'Action',    orientation:'landscape', tags:'runner endless speed jump dash',           description:'Sprint, jump and slide through an endless obstacle course. How far can one run take you?'},
+  {slug:'block-stack',       title:'Block Stack',         category:'Puzzle',    orientation:'portrait',  tags:'stack blocks tower timing puzzle',          description:'Drop falling blocks and stack a tower as high as you dare. One mistimed tap and it all comes down.'},
+  {slug:'neon-racer',        title:'Neon Racer',          category:'Racing',    orientation:'landscape', tags:'neon racer car speed drift racing',         description:'Weave through neon-lit traffic at full throttle. Reflexes win, hesitation crashes.'},
+  {slug:'bubble-pop',        title:'Bubble Pop Blast',    category:'Puzzle',    orientation:'portrait',  tags:'bubble shooter pop match aim puzzle',       description:'Aim, bounce and pop matching bubbles to clear the board before it creeps too close.'},
+  {slug:'sky-jumper',        title:'Sky Jumper',          category:'Arcade',    orientation:'portrait',  tags:'jump platform climb sky arcade',            description:'Bounce ever upward across floating platforms. Higher is better — falling is forever.'},
+  {slug:'maze-escape',       title:'Maze Escape',         category:'Puzzle',    orientation:'landscape', tags:'maze labyrinth escape logic puzzle',        description:'Find your way out of twisting labyrinths before the clock beats you. Every exit is hidden in plain sight.'},
+  {slug:'fruit-catch',       title:'Fruit Catch',         category:'Casual',    orientation:'portrait',  tags:'catch fruit basket casual relax',           description:'Catch the falling harvest and dodge the rotten ones. A gentle game with a sneaky difficulty curve.'},
+  {slug:'tank-battle',       title:'Tank Battle',         category:'Action',    orientation:'landscape', tags:'tank battle shoot aim action war',          description:'Command a lone tank against waves of enemies. Angle, power and nerve decide every duel.'},
+  {slug:'memory-cards',      title:'Memory Cards',        category:'Puzzle',    orientation:'portrait',  tags:'memory pairs cards match brain',            description:'Flip cards two at a time and match every pair. Fewer flips, sharper mind.'},
+  {slug:'space-shooter',     title:'Space Shooter',       category:'Action',    orientation:'portrait',  tags:'space shooter alien galaxy shoot arcade',   description:'Blast waves of alien formations in classic arcade style. Upgrade, survive, repeat.'},
+  {slug:'hop-champ',         title:'Hop Champ',           category:'Arcade',    orientation:'portrait',  tags:'hop jump timing arcade one-tap',            description:'A one-tap hopping challenge with perfectly unfair timing. Simple to learn, brutal to master.'},
+  {slug:'traffic-rush',      title:'Traffic Rush',        category:'Racing',    orientation:'portrait',  tags:'traffic dodge car highway racing',          description:'Thread your car through endless highway traffic at insane speeds. Every gap is a chance.'},
+  {slug:'penalty-kick',      title:'Penalty Kick',        category:'Sports',    orientation:'portrait',  tags:'penalty football soccer kick sports goal',  description:'Step up, pick your corner and beat the keeper — then switch sides and make the saves.'},
+  {slug:'tower-defense-lite',title:'Tower Defense Lite',  category:'Strategy',  orientation:'landscape', tags:'tower defense strategy waves defense',      description:'Place towers, hold the line and stop every wave. Pure strategy, no luck required.'},
+  {slug:'snake-classic',     title:'Snake Classic',       category:'Arcade',    orientation:'landscape', tags:'snake classic arcade grow retro',           description:'The timeless grid classic: eat, grow, and never bite your own tail. Longer means luckier — and riskier.'},
+  {slug:'brick-breaker',     title:'Brick Breaker',       category:'Arcade',    orientation:'portrait',  tags:'brick breaker paddle ball arcade breakout', description:'Bounce the ball, smash every brick and keep the paddle alive through escalating levels.'},
+  {slug:'cloud-climber',     title:'Cloud Climber',       category:'Arcade',    orientation:'portrait',  tags:'climb clouds platforms vertical arcade',    description:'Climb an endless sky of drifting clouds. The higher you go, the faster the world scrolls.'},
+  {slug:'color-match',       title:'Color Match',         category:'Casual',    orientation:'portrait',  tags:'color match reflex casual tap',             description:'Tap only what matches, and nothing else. A deceptively relaxing reflex game.'},
+  {slug:'chess-mini',        title:'Chess Mini',          category:'Strategy',  orientation:'landscape', tags:'chess strategy board mini tactics',         description:'Full chess rules in a fast, friendly package. Out-think the board, one move at a time.'},
+  {slug:'platform-hero',     title:'Platform Hero',       category:'Adventure', orientation:'landscape', tags:'platformer adventure hero jump levels',     description:'Run, jump and explore handcrafted levels as a tiny hero on a big quest.'}
+];
+
 /* ============ constants ============ */
 var SITE='https://tokenrush.online/';
 var PAGE=24;
 var BASE_TITLE='Token Rush \u2013 Play Free Online Games | Free Browser Games';
-var BASE_DESC='Play free online games on Token Rush! Enjoy 100+ free browser games \u2014 puzzle, action, racing, arcade, sports & more. Play games online instantly on mobile & desktop. No download, no signup.';
+var BASE_DESC='Play free online games on Token Rush! Discover free browser games \u2014 puzzle, action, racing, arcade, sports & more. Play games online instantly on mobile & desktop. No download, no signup.';
 var FALLBACK_IMG='https://img.youtube.com/vi/z0NMdW5zgYE/maxresdefault.jpg';
 var THEME_KEY='tr-theme';
 
@@ -793,7 +933,6 @@ function ph(seed){ var ch=(String(seed).trim().charAt(0)||'G').toUpperCase();
   var svg='<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384"><rect width="100%" height="100%" fill="#dfe3e8"/><text x="50%" y="55%" font-family="sans-serif" font-size="150" font-weight="700" fill="#aeb6be" text-anchor="middle" dominant-baseline="middle">'+ch+'</text></svg>';
   return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg); }
 
-/* ============ icons ============ */
 var I={
   arrow:'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
   chevL:'<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
@@ -823,16 +962,8 @@ function toggleTheme(){
 
 /* ============ three-dot menu ============ */
 var moreBtn=$('moreBtn'), moreMenu=$('moreMenu');
-function openMore(){
-  if(!moreMenu.hidden) return;
-  moreMenu.hidden=false;
-  moreBtn.setAttribute('aria-expanded','true');
-}
-function closeMore(){
-  if(moreMenu.hidden) return;
-  moreMenu.hidden=true;
-  moreBtn.setAttribute('aria-expanded','false');
-}
+function openMore(){ if(!moreMenu.hidden) return; moreMenu.hidden=false; moreBtn.setAttribute('aria-expanded','true'); }
+function closeMore(){ if(moreMenu.hidden) return; moreMenu.hidden=true; moreBtn.setAttribute('aria-expanded','false'); }
 document.addEventListener('click',function(e){
   if(moreMenu.hidden) return;
   if(e.target.closest('#moreMenu')||e.target.closest('#moreBtn')) return;
@@ -840,13 +971,13 @@ document.addEventListener('click',function(e){
 });
 
 /* ============ state ============ */
-var state={ games:[], byId:new Map(), cats:[], activeCat:'All', shown:PAGE, homeScroll:0, ready:false, loading:true, failed:false };
+var state={ games:[], byId:new Map(), cats:[], activeCat:'All', shown:PAGE, homeScroll:0, partnerFailed:false, localCount:0 };
 var GAMES=state.games;
 var currentRoute='home';
 var internalNav=false;
 var currentShare=null;
 
-/* ============ normalization & slug ============ */
+/* ============ normalization ============ */
 function normTitle(t){ return String(t||'').toLowerCase().replace(/&/g,' and ').replace(/[^a-z0-9]+/g,' ').trim(); }
 function normURL(u){ return String(u||'').replace(/^https?:\/\//i,'').replace(/^www\./i,'').replace(/\/+$/,'').toLowerCase(); }
 function slugify(t){
@@ -861,7 +992,40 @@ function normCat(c){ if(Array.isArray(c)) c=c[0]; c=String(c==null?'':c).split('
   if(low==='io'||low==='rpg'||low==='mmorpg'||low==='3d'||low==='2d') return low.toUpperCase();
   return low.replace(/\b[a-z]/g,function(m){ return m.toUpperCase(); }); }
 
-/* ============ feed normalization ============ */
+/* ============ local game builder ============ */
+function buildLocalGames(){
+  var usedId=Object.create(null), usedSlug=Object.create(null), out=[];
+  for(var i=0;i<LOCAL_GAMES.length;i++){
+    var e=LOCAL_GAMES[i];
+    if(!e||!e.slug||!e.title) continue;               /* skip malformed — never ghost cards */
+    if(usedSlug[e.slug]) continue;                     /* skip duplicate slugs */
+    var title=cleanText(e.title);
+    if(!title) continue;
+    usedSlug[e.slug]=1;
+    var id=slugify(title), n=2;
+    while(usedId[id]){ id=slugify(title)+'-'+n; n++; }
+    usedId[id]=1;
+    var g={
+      id:id,
+      title:clampStr(title,90),
+      url:'/games/'+e.slug+'/',
+      image:(typeof e.thumb==='string'&&e.thumb)?e.thumb:'/games/'+e.slug+'/thumb.png',
+      description:cleanText(e.description||''),
+      category:normCat(e.category)||'Casual',
+      instructions:cleanText(e.instructions||''),
+      tags:cleanText(e.tags||''),
+      orientation:(e.orientation==='portrait')?'portrait':'landscape',
+      provider:'Token Rush',
+      local:true
+    };
+    g.short=clampStr(g.description||'',110);
+    g._s=(g.title+' '+g.category+' '+g.tags+' '+g.description).toLowerCase();
+    out.push(g);
+  }
+  return out;
+}
+
+/* ============ partner feed parsing ============ */
 function fromGamePix(it){
   if(!it||typeof it!=='object') return null;
   var title=cleanText(it.title); var image=String(it.image||''); var url=String(it.url||'');
@@ -871,9 +1035,8 @@ function fromGamePix(it){
   return { rawId:'gp:'+rawId, title:title, image:image, url:url,
     description:cleanText(it.description), category:normCat(catRaw), instructions:'',
     tags:'', orientation:it.orientation==='portrait'?'portrait':'landscape',
-    provider:'GamePix' };
+    provider:'GamePix', local:false };
 }
-
 function fromMonetize(it){
   if(!it||typeof it!=='object') return null;
   var title=cleanText(it.title); var image=String(it.thumb||it.image||''); var url=String(it.url||'');
@@ -885,29 +1048,29 @@ function fromMonetize(it){
     description:cleanText(it.description), category:normCat(it.category), instructions:cleanText(it.instructions),
     tags:cleanText(Array.isArray(it.tags)?it.tags.join(' '):it.tags),
     orientation:(h&&w&&h>w)?'portrait':'landscape',
-    provider:'GameMonetize' };
+    provider:'GameMonetize', local:false };
 }
 
-/* ============ strong deduplication ============ */
-function dedupeAndId(list){
+/* ============ partner dedup (also drops any partner matching a local title) ============ */
+function dedupePartners(list,localTitles){
   var seenURL=Object.create(null), seenID=Object.create(null),
-      seenTitleHost=Object.create(null), seenTitleThumb=Object.create(null);
+      seenTitleHost=Object.create(null), seenTitleThumb=Object.create(null),
+      seenLocalTitle=Object.create(null);
+  for(var t=0;t<localTitles.length;t++) seenLocalTitle[localTitles[t]]=1;
   var out=[];
   for(var i=0;i<list.length;i++){
     var g=list[i]; if(!g) continue;
+    var kT=normTitle(g.title);
+    if(!kT||seenLocalTitle[kT]) continue;              /* local version always wins */
     var kURL=normURL(g.url);
     if(!kURL||seenURL[kURL]) continue;
     var kID=g.rawId; if(seenID[kID]) continue;
-    var kT=normTitle(g.title); if(!kT) continue;
     var host=kURL.split('/')[0];
-    var thKey=kT+'|'+host;
-    if(seenTitleHost[thKey]) continue;
+    if(seenTitleHost[kT+'|'+host]) continue;
     var kThumb=normURL(g.image);
-    var ttKey=kT+'|'+kThumb;
-    if(kThumb&&seenTitleThumb[ttKey]) continue;
-    seenURL[kURL]=1; seenID[kID]=1; seenTitleHost[thKey]=1;
-    if(kThumb) seenTitleThumb[ttKey]=1;
-
+    if(kThumb&&seenTitleThumb[kT+'|'+kThumb]) continue;
+    seenURL[kURL]=1; seenID[kID]=1; seenTitleHost[kT+'|'+host]=1;
+    if(kThumb) seenTitleThumb[kT+'|'+kThumb]=1;
     g._title=clampStr(g.title,90);
     g.short=clampStr(g.description||'',110);
     g._s=(g.title+' '+g.category+' '+g.tags+' '+g.description).toLowerCase();
@@ -926,7 +1089,6 @@ function dedupeAndId(list){
 /* ============ DOM refs ============ */
 var homeView=$('view-home'), detailView=$('view-detail'),
     marqueeEl=$('marquee'), featuredMount=$('featuredMount'),
-    featuredSection=$('featuredSection'), catSection=$('categoriesSection'),
     catStrip=$('catStrip'), chipRow=$('chipRow'), gamesGrid=$('gamesGrid'),
     gamesCount=$('gamesCount'), loadWrap=$('loadWrap'),
     searchOverlay=$('searchOverlay'), searchInput=$('searchInput'), searchResults=$('searchResults'),
@@ -936,7 +1098,7 @@ var homeView=$('view-home'), detailView=$('view-detail'),
     playerLoader=$('playerLoader'), playerSlow=$('playerSlow'), rotateHint=$('rotateHint'),
     ytWrap=$('ytWrap');
 
-/* ============ SEO / meta management ============ */
+/* ============ SEO ============ */
 function metaSet(attr,key,val){
   var el=document.head.querySelector('meta['+attr+'="'+key+'"]');
   if(el) el.setAttribute('content',val);
@@ -993,7 +1155,7 @@ function applyGameSEO(g){
   }catch(_e){ ldGame.textContent=''; }
 }
 
-/* ============ toast ============ */
+/* ============ toast / copy / share ============ */
 var toastTimer=null;
 function toast(msg){
   toastEl.textContent=msg;
@@ -1001,8 +1163,6 @@ function toast(msg){
   clearTimeout(toastTimer);
   toastTimer=setTimeout(function(){ toastEl.classList.remove('show'); },2000);
 }
-
-/* ============ copy ============ */
 function legacyCopy(text){
   var ta=document.createElement('textarea');
   ta.value=text; ta.setAttribute('readonly','');
@@ -1027,8 +1187,6 @@ function flashBtn(btn,label){
   btn.classList.add('done');
   btn._restore=setTimeout(function(){ btn.innerHTML=btn._orig; btn.classList.remove('done'); btn._restore=null; },2000);
 }
-
-/* ============ share ============ */
 function openShareModal(data){
   currentShare=data;
   shareSub.textContent=data.text+' '+data.url;
@@ -1075,30 +1233,22 @@ var locks=0;
 function lockScroll(){ if(++locks===1) document.body.classList.add('noscroll'); }
 function unlockScroll(){ locks=Math.max(0,locks-1); if(!locks) document.body.classList.remove('noscroll'); }
 
-/* ============ loading ============ */
-function skeletonCards(n){ var s=''; for(var i=0;i<n;i++) s+='<div class="card skel skel-card"></div>'; return s; }
-
-function setLoadingUI(){
-  state.failed=false;
-  featuredSection.hidden=false; catSection.hidden=false;
-  featuredMount.innerHTML='<div class="car-skel skel"></div>';
-  var cs=''; for(var i=0;i<5;i++) cs+='<div class="cat-card skel skel-cat"></div>';
-  catStrip.innerHTML=cs;
-  chipRow.innerHTML='';
-  marqueeEl.hidden=true;
-  renderGrid(false);
+/* ============ hybrid catalog loading ============ */
+function rebuildIndex(){
+  state.byId=new Map(GAMES.map(function(g){ return [g.id,g]; }));
+  var m=new Map();
+  GAMES.forEach(function(g){ if(g.category) m.set(g.category,(m.get(g.category)||0)+1); });
+  state.cats=Array.from(m.entries()).sort(function(a,b){ return b[1]-a[1]; });
 }
-
-function renderCatalogError(){
-  featuredMount.innerHTML=''; catStrip.innerHTML='';
-  featuredSection.hidden=true; catSection.hidden=true; marqueeEl.hidden=true;
-  gamesGrid.innerHTML='<div class="state-box" style="grid-column:1/-1"><h3>We couldn\u2019t load the game catalogue</h3><p>The game networks didn\u2019t respond. Check your connection and try again \u2014 everything else on the page still works.</p><button class="btn" data-action="retry">'+I.retry+' Try again</button></div>';
-  gamesCount.textContent=''; loadWrap.hidden=true;
+function initCatalog(){
+  var locals=buildLocalGames();
+  state.localCount=locals.length;
+  GAMES.length=0;
+  for(var i=0;i<locals.length;i++) GAMES.push(locals[i]);
+  rebuildIndex();
+  renderMarquee(); renderFeatured(); renderCatStrip(); renderChips(); renderGrid(false);
 }
-
 async function loadFeeds(){
-  state.loading=true; state.ready=false;
-  setLoadingUI();
   var results=await Promise.all([
     fetchJSON('https://feeds.gamepix.com/v2/json?sid=4107O&pagination=96&page=1').catch(function(){ return null; }),
     fetchJSON('https://gamemonetize.com/feed.php?format=0&page=1').catch(function(){ return null; })
@@ -1107,27 +1257,34 @@ async function loadFeeds(){
   var px=results[0], gm=results[1];
   if(px&&Array.isArray(px.items)){ for(var i=0;i<px.items.length;i++){ var a=fromGamePix(px.items[i]); if(a) list.push(a); } }
   if(Array.isArray(gm)){ for(var j=0;j<gm.length;j++){ var b=fromMonetize(gm[j]); if(b) list.push(b); } }
-  var games=dedupeAndId(list);
-  state.loading=false;
-  if(!games.length){ state.failed=true; renderCatalogError(); return; }
-  state.games.length=0; for(var k=0;k<games.length;k++) state.games.push(games[k]);
-  state.byId=new Map(games.map(function(g){ return [g.id,g]; }));
-  buildCats();
-  state.ready=true;
-  renderMarquee(); renderFeatured(); renderCatStrip(); renderChips(); renderGrid(true);
-  if(currentRoute!=='home') onRoute();
+  var localTitles=GAMES.filter(function(g){ return g.local; }).map(function(g){ return normTitle(g.title); });
+  var partners=dedupePartners(list,localTitles);
+  if(partners.length){
+    state.partnerFailed=false;
+    var locals=[];
+    for(var y=0;y<GAMES.length;y++){ if(GAMES[y].local) locals.push(GAMES[y]); }
+    GAMES.length=0;
+    for(var l=0;l<locals.length;l++) GAMES.push(locals[l]);
+    for(var p=0;p<partners.length;p++) GAMES.push(partners[p]);
+    rebuildIndex();
+    renderMarquee(); renderFeatured(); renderCatStrip(); renderChips(); renderGrid(true);
+    if(currentRoute!=='home') onRoute();
+  }else{
+    state.partnerFailed=true;
+    renderGrid(false);
+  }
 }
 
-/* ============ home renderers ============ */
+/* ============ renderers ============ */
 function cardHTML(g,compact){
   return '<a class="card" href="#game='+encodeURIComponent(g.id)+'">'
     +'<div class="card-media"><img loading="lazy" decoding="async" src="'+esc(g.image)+'" alt="Play '+esc(g.title)+' \u2014 free online '+(g.category?esc(g.category).toLowerCase():'browser')+' game" onerror="__imgFail(this)">'
     +(g.category?'<span class="card-cat">'+esc(g.category)+'</span>':'')
+    +(g.local?'<span class="card-local">Original</span>':'')
     +'</div><div class="card-body"><h3 class="card-title">'+esc(g.title)+'</h3>'
     +(!compact&&g.short?'<p class="card-desc">'+esc(g.short)+'</p>':'')
     +'<span class="card-cta">View game '+I.arrow+'</span></div></a>';
 }
-
 function renderMarquee(){
   var pool=GAMES.filter(function(g){ return g.image; }).slice(0,24);
   if(pool.length<8){ marqueeEl.hidden=true; return; }
@@ -1137,7 +1294,6 @@ function renderMarquee(){
     +'<div class="mq-row rev"><div class="mq-half">'+half(b)+'</div><div class="mq-half">'+half(b)+'</div></div>';
   marqueeEl.hidden=false;
 }
-
 function pickFeatured(n){
   var res=[], usedCat=Object.create(null), i, g;
   for(i=0;i<GAMES.length&&res.length<n;i++){ g=GAMES[i];
@@ -1146,14 +1302,14 @@ function pickFeatured(n){
   for(i=0;i<GAMES.length&&res.length<n;i++){ if(res.indexOf(GAMES[i])===-1) res.push(GAMES[i]); }
   return res.slice(0,n);
 }
-
 function renderFeatured(){
-  var list=pickFeatured(7); /* unique by construction — one entry per game */
+  var list=pickFeatured(7);
+  if(!list.length){ featuredMount.innerHTML=''; return; }
   var slides=list.map(function(g,i){
     return '<a class="car-slide" href="#game='+encodeURIComponent(g.id)+'" aria-label="'+esc(g.title)+' \u2014 view game details">'
       +'<img class="car-img" src="'+esc(g.image)+'" alt="" decoding="async" '+(i<2?'fetchpriority="high"':'loading="lazy"')+' onerror="__imgFail(this)">'
       +'<span class="car-scrim" aria-hidden="true"></span>'
-      +'<span class="car-caption"><span class="chip chip-glass">'+esc(g.category||'Featured')+'</span>'
+      +'<span class="car-caption"><span class="chip chip-glass">'+(g.local?'Token Rush Original':esc(g.category||'Featured'))+'</span>'
       +'<h3>'+esc(g.title)+'</h3><span class="car-cta">View game '+I.arrow+'</span></span></a>';
   }).join('');
   var dots=list.map(function(g,i){
@@ -1167,13 +1323,6 @@ function renderFeatured(){
     +'</div></div>';
   carN=list.length; carI=0;
 }
-
-function buildCats(){
-  var m=new Map();
-  GAMES.forEach(function(g){ if(g.category) m.set(g.category,(m.get(g.category)||0)+1); });
-  state.cats=Array.from(m.entries()).sort(function(a,b){ return b[1]-a[1]; });
-}
-
 function renderCatStrip(){
   catStrip.innerHTML=state.cats.slice(0,8).map(function(e){
     var rep=null;
@@ -1183,7 +1332,6 @@ function renderCatStrip(){
       +'<span class="cat-meta"><span class="cat-name">'+esc(e[0])+'</span><span class="cat-count">'+e[1]+' game'+(e[1]>1?'s':'')+'</span></span></button>';
   }).join('');
 }
-
 function renderChips(){
   var top=['All'].concat(state.cats.slice(0,12).map(function(c){ return c[0]; }));
   chipRow.innerHTML=top.map(function(c){
@@ -1193,22 +1341,22 @@ function renderChips(){
     return '<button class="chip-f'+(on?' on':'')+'" data-cat="'+esc(c)+'" aria-pressed="'+on+'">'+esc(c)+count+'</button>';
   }).join('');
 }
-
 function renderGrid(animate){
-  if(!state.ready){
-    if(state.failed){ return; }
-    gamesGrid.innerHTML=skeletonCards(10); gamesCount.textContent=''; loadWrap.hidden=true; return;
-  }
   var list=state.activeCat==='All'?GAMES:GAMES.filter(function(g){ return g.category===state.activeCat; });
   if(!list.length){
     gamesGrid.innerHTML='<p class="state-line">No games in this category yet.</p>';
     gamesCount.textContent=''; loadWrap.hidden=true; return;
   }
   var vis=list.slice(0,state.shown);
-  gamesGrid.innerHTML=vis.map(function(g){ return cardHTML(g,false); }).join('');
+  var html=vis.map(function(g){ return cardHTML(g,false); }).join('');
+  if(state.partnerFailed&&state.activeCat==='All'){
+    html+='<div class="state-box" style="grid-column:1/-1"><h3>Partner games couldn\u2019t load</h3><p>The game networks didn\u2019t respond \u2014 but all Token Rush originals above work perfectly. Check your connection and retry.</p><button class="btn" data-action="retry">'+I.retry+' Retry partner games</button></div>';
+  }
+  gamesGrid.innerHTML=html;
   gamesGrid.classList.remove('anim-grid');
   if(animate&&motionOK()){ void gamesGrid.offsetWidth; gamesGrid.classList.add('anim-grid'); }
-  gamesCount.textContent='Showing '+vis.length+' of '+list.length+(state.activeCat==='All'?'':' '+state.activeCat)+' game'+(list.length===1?'':'s');
+  gamesCount.textContent='Showing '+vis.length+' of '+list.length+(state.activeCat==='All'?'':' '+state.activeCat)+' game'+(list.length===1?'':'s')
+    +(state.localCount?(' \u00b7 '+state.localCount+' Token Rush original'+(state.localCount>1?'s':'')+' first'):'');
   loadWrap.hidden=state.shown>=list.length;
 }
 
@@ -1344,15 +1492,18 @@ function dsec(t,inner){ return '<section class="d-sec"><h2>'+t+'</h2>'+inner+'</
 function featuresFor(g){
   var f=['Plays instantly in your browser \u2014 nothing to download or install','Free to play, no account needed'];
   f.push(g.orientation==='portrait'?'Built for portrait play on phones':'Best in landscape on phones, full screen on desktop');
-  f.push((g.category?esc(g.category)+' gameplay':'HTML5 game')+' from the '+esc(g.provider)+' catalogue');
+  if(g.local) f.push('A Token Rush original \u2014 hosted on-site, loads instantly');
+  else f.push((g.category?esc(g.category)+' gameplay':'HTML5 game')+' from the '+esc(g.provider)+' catalogue');
   return f;
 }
 function overviewHTML(g){
   if(g.description){
     return '<p>'+esc(clampStr(g.description,420))+'</p>'
-      +'<p class="mut">You can play '+esc(g.title)+' and many more free online games right here on Token Rush \u2014 no download, no signup.</p>';
+      +(g.local
+        ?'<p class="mut">'+esc(g.title)+' is a Token Rush original \u2014 built and hosted right here, so it loads faster than anything else on the site.</p>'
+        :'<p class="mut">You can play '+esc(g.title)+' and many more free online games right here on Token Rush \u2014 no download, no signup.</p>');
   }
-  return '<p>'+esc(g.title)+' is a '+(g.category?esc(g.category).toLowerCase():'browser')+' game from the '+esc(g.provider)+' HTML5 catalogue. Press Play Now and it loads directly in this tab, free.</p>';
+  return '<p>'+esc(g.title)+' is a '+(g.category?esc(g.category).toLowerCase():'browser')+' game'+(g.local?' built and hosted by Token Rush':' from the '+esc(g.provider)+' HTML5 catalogue')+'. Press Play Now and it loads directly in this tab, free.</p>';
 }
 function stepsHTML(g,G){
   if(g.instructions){
@@ -1371,7 +1522,8 @@ function relatedFor(g,n){
   var same=g.category?GAMES.filter(function(x){ return x.id!==g.id&&x.category===g.category; }):[];
   var seen=Object.create(null); same.forEach(function(x){ seen[x.id]=1; });
   var rest=GAMES.filter(function(x){ return x.id!==g.id&&!seen[x.id]; });
-  return same.concat(rest).slice(0,n); /* unique by construction */
+  rest.sort(function(a,b){ return (b.local?1:0)-(a.local?1:0); });
+  return same.concat(rest).slice(0,n);
 }
 function detailSkeleton(){
   return '<div class="container"><div class="back-row">&nbsp;</div>'
@@ -1380,25 +1532,20 @@ function detailSkeleton(){
 }
 function notFoundHTML(){
   return '<div class="container"><div class="back-row"><button class="back-btn" data-action="detail-back">'+I.chevL+'All games</button></div>'
-    +'<div class="state-box"><h3>Game not found</h3><p>This game isn\u2019t in the current catalogue. It may have been removed by its network.</p><a class="btn" href="#/">Back to all games</a></div></div>';
+    +'<div class="state-box"><h3>Game not found</h3><p>This game isn\u2019t in the current catalogue. It may have been removed by its network.</p><a class="btn" href="#games">Back to all games</a></div></div>';
 }
-
 function renderDetail(id){
   var g=state.byId.get(id);
-  if(!g){
-    if(!state.ready){ detailView.innerHTML=detailSkeleton(); return; }
-    detailView.innerHTML=notFoundHTML(); applyBaseSEO(); return;
-  }
+  if(!g){ detailView.innerHTML=detailSkeleton(); return; }
   applyGameSEO(g);
   var G=guideFor(g), rel=relatedFor(g,6);
   detailView.innerHTML=
     '<div class="container detail anim-view" style="max-width:1100px">'
     +'<div class="back-row"><button class="back-btn" data-action="detail-back">'+I.chevL+'All games</button></div>'
-    /* ONE primary artwork — aspect-ratio preserved, object-fit: contain */
     +'<figure class="d-hero">'
     +'<img class="anim-img" src="'+esc(g.image)+'" alt="'+esc(g.title)+' \u2014 free online game artwork" decoding="async" fetchpriority="high" onerror="__imgFail(this)">'
     +'</figure>'
-    +'<div style="position:relative"><span class="chip" style="position:absolute;top:-13px;left:2px">'+esc(g.category||'Browser game')+'</span></div>'
+    +'<div style="position:relative"><span class="chip" style="position:absolute;top:-13px;left:2px">'+(g.local?'Token Rush Original':esc(g.category||'Browser game'))+'</span></div>'
     +'<h1 class="detail-title">'+esc(g.title)+'</h1>'
     +'<p class="detail-meta">'+esc(g.category||'Browser game')+' \u00b7 HTML5 \u00b7 '+(g.orientation==='portrait'?'great on phones in portrait':'best in landscape on phones')+'</p>'
     +'<div class="detail-cols">'
@@ -1415,7 +1562,7 @@ function renderDetail(id){
     +fact('Category',esc(g.category||'\u2014'))
     +fact('Screen',g.orientation==='portrait'?'Portrait-friendly':'Landscape recommended')
     +fact('Format','HTML5 \u00b7 in-browser')
-    +fact('Source',esc(g.provider)+' catalogue')
+    +(g.local?fact('Source','Token Rush original'):fact('Source',esc(g.provider)+' catalogue'))
     +'</dl></aside>'
     +'<div class="detail-main">'
     +dsec('About this game',overviewHTML(g))
@@ -1432,7 +1579,6 @@ function renderDetail(id){
 
 /* ============ player ============ */
 var playerOpen=false, playerGame=null, slowTimer=null, errTimer=null, rotMql=null, rotFn=null;
-
 function clearPlayerTimers(){ clearTimeout(slowTimer); clearTimeout(errTimer); slowTimer=errTimer=null; }
 function playerLoadedOK(){ playerLoader.hidden=true; playerSlow.hidden=true; clearPlayerTimers(); }
 function showPlayerError(id){
@@ -1444,7 +1590,6 @@ function showPlayerError(id){
     +'<a class="act-btn" style="text-decoration:none" href="#game='+encodeURIComponent(id)+'">Back to details</a>'
     +'</div></div>';
 }
-
 function hideRotate(){
   rotateHint.hidden=true;
   if(rotMql&&rotFn){
@@ -1462,7 +1607,6 @@ function setupRotateHint(g){
   window.addEventListener('resize',rotFn);
   rotFn();
 }
-
 function openPlayer(id,force){
   var g=state.byId.get(id);
   playerEl.hidden=false;
@@ -1472,7 +1616,7 @@ function openPlayer(id,force){
     playerTitle.textContent='Game not found';
     playerSlow.hidden=true; playerHost.replaceChildren();
     clearPlayerTimers();
-    playerLoader.innerHTML='<div class="center-msg"><p>This game could not be found in the catalogue.</p><a class="btn" href="#/">Go home</a></div>';
+    playerLoader.innerHTML='<div class="center-msg"><p>This game could not be found in the catalogue.</p><a class="btn" href="/">Go home</a></div>';
     playerLoader.hidden=false;
     return;
   }
@@ -1486,31 +1630,25 @@ function openPlayer(id,force){
   f.className='game-frame'; f.title=g.title;
   f.setAttribute('allow','fullscreen; autoplay; gamepad; accelerometer; gyroscope');
   f.setAttribute('allowfullscreen','');
-  f.src=g.url;
+  f.src=g.url; /* works for local paths ("/games/x/") and partner https URLs alike */
   playerHost.replaceChildren(f);
-  f.addEventListener('load',function(){
-    /* cross-origin iframes still fire load when the document loads */
-    if(playerGame===id) playerLoadedOK();
-  });
+  f.addEventListener('load',function(){ if(playerGame===id) playerLoadedOK(); });
   clearPlayerTimers();
   slowTimer=setTimeout(function(){ if(playerOpen&&playerGame===id) playerSlow.hidden=false; },8000);
   errTimer=setTimeout(function(){ if(playerOpen&&playerGame===id) showPlayerError(id); },18000);
   setupRotateHint(g);
 }
-
 function teardownPlayer(){
   if(!playerOpen) return;
   playerOpen=false; playerGame=null;
   playerEl.hidden=true; playerHost.replaceChildren();
   clearPlayerTimers(); hideRotate(); unlockScroll();
 }
-
 function playerBack(){
   if(internalNav){ history.back(); }
   else if(playerGame){ location.replace('#game='+encodeURIComponent(playerGame)); }
-  else{ location.replace('#/'); }
+  else{ location.replace('/'); }
 }
-
 function doFullscreen(){
   var f=playerHost.querySelector('iframe');
   var el=f||$('playerStage');
@@ -1522,16 +1660,15 @@ function doFullscreen(){
 function miniHTML(g){
   return '<a class="mini" href="#game='+encodeURIComponent(g.id)+'">'
     +'<img loading="lazy" decoding="async" src="'+esc(g.image)+'" alt="" onerror="__imgFail(this)">'
-    +'<span class="mini-t">'+esc(g.title)+'</span>'
+    +'<span class="mini-t">'+esc(g.title)+(g.local?' \u2b50':'')+'</span>'
     +(g.category?'<span class="mini-c">'+esc(g.category)+'</span>':'')+'</a>';
 }
 function renderSearch(qRaw){
   var q=String(qRaw||'').trim().toLowerCase();
   if(!q){
-    searchResults.innerHTML='<p class="search-hint">'+(state.ready?('Type to search '+GAMES.length+' free games by title, category, description or tag.'):(state.failed?'The catalogue couldn\u2019t be loaded yet. Try the retry button on the homepage.':'Loading the catalogue\u2026'))+'</p>';
+    searchResults.innerHTML='<p class="search-hint">Type to search '+GAMES.length+' free games \u2014 including '+state.localCount+' Token Rush originals \u2014 by title, category, description or tag.</p>';
     return;
   }
-  if(!state.ready){ searchResults.innerHTML='<p class="search-hint">'+(state.failed?'The catalogue couldn\u2019t be loaded, so there\u2019s nothing to search yet.':'Loading the catalogue\u2026')+'</p>'; return; }
   var res=GAMES.filter(function(g){ return g._s.indexOf(q)!==-1; }).slice(0,24);
   searchResults.classList.remove('anim-sr');
   searchResults.innerHTML=res.length
@@ -1565,11 +1702,10 @@ function parseHash(){
   var h=location.hash||'#/', m;
   if((m=h.match(/^#play=(.+)$/))||(m=h.match(/^#\/play\/(.+)$/))) return {name:'play',id:decodeURIComponent(m[1])};
   if((m=h.match(/^#game=(.+)$/))||(m=h.match(/^#\/game\/(.+)$/))) return {name:'game',id:decodeURIComponent(m[1])};
-  if(h==='#/games') return {name:'home',scroll:'games'};
-  if(h==='#/categories') return {name:'home',scroll:'categories'};
+  if(h==='#games'||h==='#/games') return {name:'home',scroll:'games'};
+  if(h==='#categories'||h==='#/categories') return {name:'home',scroll:'categories'};
   return {name:'home'};
 }
-
 function onRoute(){
   var r=parseHash();
   closeSearch(); closeShare(); closeMore();
@@ -1598,7 +1734,7 @@ function onRoute(){
   currentRoute=r.name;
 }
 
-/* ============ global event delegation ============ */
+/* ============ global events ============ */
 document.addEventListener('click',function(e){
   var a=e.target.closest('a[href^="#"]');
   if(a&&a.getAttribute('href').length>1) internalNav=true;
@@ -1621,12 +1757,12 @@ document.addEventListener('click',function(e){
     case 'search-close': closeSearch(); break;
     case 'share-close': closeShare(); break;
     case 'scroll-games': (function(){ var s=document.getElementById('games'); if(s) s.scrollIntoView({behavior:motionOK()?'smooth':'auto'}); })(); break;
-    case 'detail-back': if(internalNav){ history.back(); } else { location.replace('#/'); } break;
+    case 'detail-back': if(internalNav){ history.back(); } else { location.replace('#games'); } break;
     case 'player-back': playerBack(); break;
     case 'player-retry': openPlayer(el.getAttribute('data-retry'),true); break;
     case 'fullscreen': doFullscreen(); break;
     case 'load-more': state.shown+=PAGE; renderGrid(true); break;
-    case 'retry': loadFeeds(); break;
+    case 'retry': state.partnerFailed=false; renderGrid(false); loadFeeds(); break;
     case 'yt-play': playVideo(); break;
     case 'share-game': (function(){ var r=parseHash(); var g=state.byId.get(r.id); if(g) shareGame(g); })(); break;
     case 'copy-url': (function(){
@@ -1645,7 +1781,6 @@ document.addEventListener('click',function(e){
     case 'share-x': shareWindow('x'); break;
   }
 });
-
 document.addEventListener('keydown',function(e){
   if(e.key!=='Escape') return;
   if(!moreMenu.hidden){ closeMore(); }
@@ -1660,6 +1795,7 @@ if('scrollRestoration' in history) history.scrollRestoration='manual';
 syncThemeUI();
 window.addEventListener('hashchange',onRoute);
 applyBaseSEO();
+initCatalog();
 onRoute();
 loadFeeds();
 

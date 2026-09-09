@@ -18,16 +18,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;
---bg:#f6f7f9;--bg2:#fff;--surface:#fff;--surface2:#eef0f4;--line:rgba(16,24,32,.1);--line-soft:rgba(16,24,32,.06);
---text:#131a21;--muted:#5d6873;--accent-text:#55800a;--accent-tint:rgba(122,184,0,.1);--accent-bg:#a3d90f;--accent-ink:#101400;
---sh1:0 4px 14px rgba(16,24,32,.07);--sh2:0 14px 32px rgba(16,24,32,.11);
---disp:'Baloo 2',cursive;--body:'Manrope',sans-serif;
---sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);--sal:env(safe-area-inset-left,0px);--sar:env(safe-area-inset-right,0px)}
-html[data-theme="dark"]{color-scheme:dark;
---bg:#0b0e12;--bg2:#10141a;--surface:#161b22;--surface2:#1d232c;--line:rgba(255,255,255,.09);--line-soft:rgba(255,255,255,.05);
---text:#eef1f3;--muted:#97a1ab;--accent-text:#d8ff3e;--accent-tint:rgba(216,255,62,.1);--accent-bg:#d8ff3e;--accent-ink:#101400;
---sh1:0 4px 14px rgba(0,0,0,.3);--sh2:0 14px 32px rgba(0,0,0,.38)}
+:root{color-scheme:light;--bg:#f6f7f9;--bg2:#fff;--surface:#fff;--surface2:#eef0f4;--line:rgba(16,24,32,.1);--line-soft:rgba(16,24,32,.06);--text:#131a21;--muted:#5d6873;--accent-text:#55800a;--accent-tint:rgba(122,184,0,.1);--accent-bg:#a3d90f;--accent-ink:#101400;--sh1:0 4px 14px rgba(16,24,32,.07);--disp:'Baloo 2',cursive;--body:'Manrope',sans-serif;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
+html[data-theme="dark"]{color-scheme:dark;--bg:#0b0e12;--bg2:#10141a;--surface:#161b22;--surface2:#1d232c;--line:rgba(255,255,255,.09);--line-soft:rgba(255,255,255,.05);--text:#eef1f3;--muted:#97a1ab;--accent-text:#d8ff3e;--accent-tint:rgba(216,255,62,.1);--accent-bg:#d8ff3e;--accent-ink:#101400;--sh1:0 4px 14px rgba(0,0,0,.3)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}
@@ -146,18 +138,24 @@ button{font-family:inherit;color:inherit}
 
 <footer class="site-footer">
   <div class="container footer-in">
-    <nav class="footer-links" aria-label="Legal and information pages">
+    <nav class="footer-links" aria-label="Site">
+      <a href="/">Home</a>
+      <a href="/#games">Play Games</a>
+      <a href="/#categories">Categories</a>
+      <a href="guides.html">Gaming Guides</a>
       <a href="about-us.html">About Us</a>
       <a href="contact-us.html">Contact Us</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <nav class="footer-links" aria-label="Legal" style="margin-top:4px">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
       <a href="disclaimer.html">Disclaimer</a>
       <a href="cookie-policy.html">Cookie Policy</a>
-      <a href="faq.html">FAQ</a>
       <a href="dmca.html">DMCA</a>
       <a href="refund-policy.html">Refund Policy</a>
     </nav>
-    <p class="footer-note">© <span id="year">2025</span> Token Rush · tokenrush.online</p>
+    <p class="footer-note">© <span id="year">2026</span> Token Rush · tokenrush.online</p>
   </div>
 </footer>
 

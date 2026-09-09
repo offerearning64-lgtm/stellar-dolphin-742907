@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Gaming Guides &amp; Editorial Insights – Token Rush</title>
+<meta name="description" content="Token Rush gaming guides: the technology behind HTML5 and WebGL browser games, browser compatibility, performance, controls and safe casual play. Original in-depth editorial.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#f6f7f9">
+<link rel="canonical" href="https://tokenrush.online/guides.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Token Rush">
+<meta property="og:title" content="Gaming Guides &amp; Editorial Insights – Token Rush">
+<meta property="og:description" content="In-depth guides on modern web gaming, HTML5 and WebGL technology, browser performance, strategy tactics and safe casual play.">
+<meta property="og:url" content="https://tokenrush.online/guides.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gaming Guides &amp; Editorial Insights – Token Rush">
+<meta name="twitter:description" content="Original guides on web gaming technology, performance, strategy and safety.">
+<script>(function(){try{if(localStorage.getItem('tr-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Blog",
+  "name":"Token Rush Gaming Guides",
+  "url":"https://tokenrush.online/guides.html",
+  "description":"Original editorial guides about modern web-based gaming: HTML5 and WebGL technology, browser compatibility, performance, strategy tactics and safe casual play.",
+  "publisher":{"@type":"Organization","name":"Token Rush","url":"https://tokenrush.online/"},
+  "inLanguage":"en"
+}
+</script>
+<style>
+:root{color-scheme:light;--bg:#f6f7f9;--bg2:#fff;--surface:#fff;--surface2:#eef0f4;--line:rgba(16,24,32,.1);--line-soft:rgba(16,24,32,.06);--text:#131a21;--muted:#5d6873;--accent-text:#55800a;--accent-tint:rgba(122,184,0,.1);--accent-bg:#a3d90f;--accent-ink:#101400;--sh1:0 4px 14px rgba(16,24,32,.07);--disp:'Baloo 2',cursive;--body:'Manrope',sans-serif;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
+html[data-theme="dark"]{color-scheme:dark;--bg:#0b0e12;--bg2:#10141a;--surface:#161b22;--surface2:#1d232c;--line:rgba(255,255,255,.09);--line-soft:rgba(255,255,255,.05);--text:#eef1f3;--muted:#97a1ab;--accent-text:#d8ff3e;--accent-tint:rgba(216,255,62,.1);--accent-bg:#d8ff3e;--accent-ink:#101400;--sh1:0 4px 14px rgba(0,0,0,.3)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.75;font-size:16.5px;overflow-x:clip;transition:background .25s,color .25s;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea{-webkit-user-select:text;user-select:text}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font-family:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:2px;border-radius:4px}
+.container{width:100%;max-width:900px;margin:0 auto;padding-left:clamp(14px,4vw,24px);padding-right:clamp(14px,4vw,24px)}
+.site-header{position:sticky;top:0;z-index:60;background:var(--bg2);border-bottom:1px solid var(--line);padding-top:var(--sat)}
+.header-in{display:flex;align-items:center;gap:10px;height:68px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto;min-width:0}
+.brand-mark{width:36px;height:36px;color:var(--accent-text);flex:0 0 auto}
+.brand-name{font-family:var(--disp);font-weight:800;font-size:clamp(1.25rem,4.6vw,1.5rem);line-height:1;white-space:nowrap}
+.brand-name .t1{color:var(--text)}.brand-name .t2{color:var(--accent-text);display:inline-block;transform:rotate(-2deg)}
+.icon-btn{width:44px;height:44px;display:inline-grid;place-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);cursor:pointer;transition:border-color .2s,background .2s,transform .15s}
+.icon-btn:hover{border-color:var(--accent-text);background:var(--surface2)}
+.icon-btn:active{transform:scale(.92)}
+.ic-sun{display:none}html[data-theme="dark"] .ic-sun{display:block}html[data-theme="dark"] .ic-moon{display:none}
+.back-row{padding:calc(18px + var(--sat)) 0 6px;display:flex;flex-wrap:wrap;gap:10px}
+.back-btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:10px 18px 10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--text);font-weight:800;font-size:.92rem;cursor:pointer;transition:border-color .2s,color .2s,transform .15s;text-decoration:none}
+.back-btn:hover{border-color:var(--accent-text);color:var(--accent-text)}
+.back-btn:active{transform:scale(.96)}
+.back-btn svg{color:var(--accent-text)}
+.page-head{padding:14px 0 10px}
+.kicker{font-size:.7rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-text);margin-bottom:8px}
+.page-title{font-family:var(--disp);font-weight:800;font-size:clamp(1.7rem,6vw,2.5rem);line-height:1.12;margin-bottom:8px}
+.page-sub{color:var(--muted);font-size:.95rem;max-width:62ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,4.5vw,34px);margin-top:18px;box-shadow:var(--sh1)}
+article h2{font-family:var(--disp);font-weight:700;font-size:1.25rem;margin:32px 0 12px;padding-left:13px;border-left:3px solid var(--accent-bg)}
+article h2:first-of-type{margin-top:0}
+article h3{font-family:var(--disp);font-weight:700;font-size:1.02rem;margin:22px 0 8px}
+article p{color:var(--muted);margin-bottom:14px}
+article ul,article ol{color:var(--muted);margin:0 0 16px;padding-left:22px}
+article li{margin-bottom:8px}
+article a{color:var(--accent-text);font-weight:700;text-decoration:none}
+article a:hover{text-decoration:underline}
+article blockquote{background:var(--accent-tint);border:1px solid var(--accent-text);border-radius:12px;padding:14px 18px;margin:0 0 16px;color:var(--muted);font-style:italic}
+article strong{color:var(--text)}
+.g-grid{display:grid;gap:14px;margin:20px 0 8px}
+@media(min-width:700px){.g-grid{grid-template-columns:repeat(3,1fr)}}
+.gcard{display:flex;flex-direction:column;gap:9px;background:var(--surface2);border:1px solid var(--line-soft);border-radius:14px;padding:20px;text-decoration:none;color:var(--text);transition:transform .2s,border-color .2s,box-shadow .2s}
+.gcard:hover{transform:translateY(-3px);border-color:var(--accent-text);box-shadow:var(--sh1)}
+.gcard:active{transform:scale(.98)}
+.gcard .chip{align-self:flex-start;font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-text);background:var(--accent-tint);border:1px solid var(--accent-text);padding:4px 10px;border-radius:99px}
+.gcard h3{font-family:var(--disp);font-weight:700;font-size:1.02rem;line-height:1.3;margin:0}
+.gcard p{color:var(--muted);font-size:.88rem;line-height:1.55;margin:0}
+.gcard .cta{margin-top:auto;color:var(--accent-text);font-weight:800;font-size:.8rem;padding-top:6px}
+.site-footer{border-top:1px solid var(--line);margin-top:56px;background:var(--bg2)}
+.footer-in{padding:32px 0 calc(28px + var(--sab));display:grid;gap:14px;text-align:center}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 20px}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 0;transition:color .2s}
+.footer-links a:hover{color:var(--accent-text)}
+.footer-note{color:var(--muted);font-size:.76rem}
+@media(max-width:480px){.header-in{height:64px}.card{padding:16px}body{font-size:16px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-in">
+    <a class="brand" href="/" aria-label="Token Rush – play free online games">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M3 20.5C3 15 8 11.5 13.5 11.5h13C32 11.5 37 15 37 20.5S32 29.5 26.5 29.5h-13C8 29.5 3 26 3 20.5Z" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M12.5 17.5v6M9.5 20.5h6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="24" cy="18" r="2.1" fill="currentColor"/><circle cx="28.5" cy="22.5" r="2.1" fill="currentColor"/></svg>
+      <span class="brand-name"><span class="t1">Token</span> <span class="t2">Rush</span></span>
+    </a>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle night mode">
+      <svg class="ic-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="back-row">
+      <a class="back-btn" href="/">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        Back to Home
+      </a>
+      <a class="back-btn" href="/#games">🎮 Play Games</a>
+    </div>
+    <div class="page-head">
+      <p class="kicker">Editorial &amp; Guides</p>
+      <h1 class="page-title">Gaming Guides &amp; Editorial Insights</h1>
+      <p class="page-sub">Original, in-depth writing about modern web-based gaming — how it works, how to run it smoothly, how to control it comfortably, and how to keep it safe.</p>
+    </div>
+
+    <article class="card">
+      <p>Browser gaming has quietly become one of the most accessible forms of digital entertainment in the world. A device with any modern web browser — nothing more — is enough to play thousands of titles across every genre, instantly and for free. This hub is Token Rush's editorial home: a collection of original guides that explain the technology behind the games, help you get the best possible experience from your hardware, and keep gaming safe and comfortable for every member of the family.</p>
+
+      <h2>The architecture of HTML5 web games</h2>
+      <p>Every HTML5 game is a small software application executed by your browser's engine. At the heart of most titles sit two rendering technologies. <strong>Canvas 2D</strong> is a programmable drawing surface: the game paints sprites, backgrounds and effects frame by frame into a bitmap, which makes it perfect for the fast, colourful 2D worlds of arcade, puzzle and platform games. <strong>WebGL</strong> goes further — a JavaScript interface to your device's GPU enabling hardware-accelerated 2D and 3D rendering, powering the more visually ambitious titles in any modern catalogue. Around these sit supporting standards: the Web Audio API for sound and music, standard input events for keyboard, mouse and touch, and small on-device storage mechanisms that let games remember progress between sessions.</p>
+      <p>What makes this stack remarkable is its universality. The same game file runs, unmodified, on a budget Android phone in Chrome, an iPad in Safari, and a five-year-old Windows laptop in Firefox. There are no platform-specific builds and no installs to manage — the browser <em>is</em> the platform. That is also why keeping your browser updated matters so much: each engine release improves JavaScript speed, graphics performance and battery efficiency for every game you play.</p>
+
+      <h2>Performance: getting smooth frames everywhere</h2>
+      <p>Smooth play is a partnership between the game and your settings. The three highest-impact habits are keeping your browser updated, enabling hardware acceleration so the GPU does the drawing, and closing heavy background tabs before longer sessions. Beyond those basics, caching works in your favour — return visits to a favourite game load noticeably faster — and on mobile, disabling battery-saver mode while playing prevents deliberate performance throttling. Our dedicated guide walks through per-browser settings for Chrome, Safari, Edge and Firefox, plus input-latency and network-lag fixes: <a href="guide-browser-gaming-performance.html">How to Boost Browser Gaming Performance</a>.</p>
+
+      <h2>Controls: from mouse to touchscreen</h2>
+      <p>Browser games accept a wider range of inputs than almost any other gaming format. On desktop, arrow keys or WASD handle movement, the mouse aims and clicks, and the spacebar triggers most primary actions. On touch devices, tap, drag and swipe gestures replace them — and well-built games adapt their control layouts automatically to screen size and orientation. A practical tip: many action and racing titles are designed landscape-first, and Token Rush shows a rotate hint in the player whenever a game benefits from turning your phone sideways. Where a game supports gamepads, modern browsers expose them through the standard Gamepad API — plug in and play, no drivers required.</p>
+
+      <h2>Safe casual gaming</h2>
+      <p>Browser gaming is structurally low-risk: sandboxed execution, no installs, and on Token Rush, no accounts or personal data required. The remaining skills are behavioural — choosing age-appropriate categories, reading advertising correctly, and building healthy screen-time habits. Our safety guide covers all of it in plain language: <a href="guide-safe-online-casual-gaming.html">A Guide to Safe Online Casual Gaming</a>.</p>
+
+      <blockquote>The best gaming setup is the one you forget about — updated browser, clear tabs, and a catalogue that gets you from "I have ten minutes" to "I'm playing" in under a minute.</blockquote>
+
+      <h2>The guides in this series</h2>
+
+      <div class="g-grid">
+        <a class="gcard" href="guide-browser-gaming-performance.html">
+          <span class="chip">Performance</span>
+          <h3>How to Boost Browser Gaming Performance</h3>
+          <p>GPU hardware acceleration in Chrome, Safari, Edge and Firefox, memory and tab management, caching strategy, input latency and mobile tuning.</p>
+          <span class="cta">Read the guide →</span>
+        </a>
+        <a class="gcard" href="guide-puzzle-and-strategy-tactics.html">
+          <span class="chip">Strategy</span>
+          <h3>Puzzle &amp; Strategy Tactics for Online Games</h3>
+          <p>Pattern recognition, cognitive logic routines, working memory, decision fatigue and tactical pacing across puzzle and strategy genres.</p>
+          <span class="cta">Read the guide →</span>
+        </a>
+        <a class="gcard" href="guide-safe-online-casual-gaming.html">
+          <span class="chip">Safety</span>
+          <h3>A Guide to Safe Online Casual Gaming</h3>
+          <p>Family-friendly play, data privacy, advertising awareness, kid-safe browser environments and healthy screen-time habits.</p>
+          <span class="cta">Read the guide →</span>
+        </a>
+      </div>
+
+      <h2>Where to begin</h2>
+      <p>If you're new to Token Rush, start with the <a href="/">homepage</a>: browse the categories, open a game that catches your eye, and press Play Now — the whole flow takes under a minute and requires no account. Our own originals, marked with a badge, load the fastest of all. If you want to understand what's happening under the hood, read the performance guide. If you want to win more, read the strategy guide. And if you're setting up gaming for a household, the safety guide is the most valuable twenty minutes you'll spend. Questions, corrections or ideas for a future guide? The <a href="contact-us.html">Contact Us</a> page reaches us directly, and our <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-and-conditions.html">Terms &amp; Conditions</a> describe exactly how the platform operates.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-in">
+    <nav class="footer-links" aria-label="Site">
+      <a href="/">Home</a>
+      <a href="/#games">Play Games</a>
+      <a href="/#categories">Categories</a>
+      <a href="guides.html">Gaming Guides</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html">Contact Us</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <a href="faq.html">FAQ</a>
+      <a href="dmca.html">DMCA</a>
+      <a href="refund-policy.html">Refund Policy</a>
+    </nav>
+    <p class="footer-note">© <span id="year">2026</span> Token Rush · tokenrush.online</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var yearEl=document.getElementById('year'); if(yearEl) yearEl.textContent=new Date().getFullYear();
+var tb=document.getElementById('themeBtn');
+function isDark(){return document.documentElement.getAttribute('data-theme')==='dark';}
+function syncTB(){tb.setAttribute('aria-label',isDark()?'Switch to light mode':'Switch to night mode');}
+tb.addEventListener('click',function(){
+  var next=isDark()?'light':'dark';
+  if(next==='dark')document.documentElement.setAttribute('data-theme','dark');else document.documentElement.removeAttribute('data-theme');
+  try{localStorage.setItem('tr-theme',next);}catch(e){}
+  syncTB();
+});
+syncTB();
+})();
+</script>
+</body>
+</html>
