@@ -8,6 +8,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     GOOGLE ADSENSE — loaded exactly ONCE for the whole page.
+     Publisher ID: ca-pub-4203020665151099
+     NOTE: The ad-unit SLOT ID is NOT provided yet. See the
+     AFAds.SLOT constant in the script below for where to insert it.
+============================================================ -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4203020665151099"
+     crossorigin="anonymous"></script>
+
 <style>
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{height:100%;overflow:hidden;background:#12100c;overscroll-behavior:none}
@@ -91,6 +101,7 @@
     background:#1c1811;border:1px solid rgba(255,235,200,.1);border-radius:26px;
     padding:30px 24px;width:min(340px,88vw);text-align:center;
     box-shadow:0 26px 60px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,240,215,.07);
+    max-height:calc(100vh - 32px);overflow-y:auto;-webkit-overflow-scrolling:touch;
   }
   .panel h2{font-family:'Bungee',cursive;font-size:26px;letter-spacing:1px;margin-bottom:6px}
   .panel .score-big{font-family:'Bungee',cursive;font-size:34px;color:#f7f1e5;margin:10px 0 2px}
@@ -102,6 +113,25 @@
     background:#ffd23f;border-radius:8px;padding:4px 10px;margin-bottom:6px;
     box-shadow:0 2px 0 #b9962a;
   }
+
+  /* ============================================================
+     af-ads — safe, self-contained ad-break container.
+     Occupies its OWN normal flow space inside the results panel,
+     BELOW all buttons, clearly labeled, never overlapping the
+     canvas or any control. Collapses (hidden) when no ad shows.
+  ============================================================ */
+  .af-ads-break{
+    width:100%;max-width:336px;margin:24px auto 2px;padding-top:12px;
+    border-top:1px solid rgba(255,235,200,.12);
+    text-align:center;overflow:hidden;
+  }
+  .af-ads-break[hidden]{display:none}
+  .af-ads-break .af-ads-label{
+    display:block;font-size:9px;letter-spacing:2.5px;color:#6f6653;
+    font-weight:600;margin-bottom:8px;
+  }
+  .af-ads-break .af-ads-slot{width:100%;min-height:50px}
+  .af-ads-break ins.af-ads-ins{display:block;width:100%}
 
   /* ---------- home ---------- */
   #homeScreen{
@@ -306,6 +336,12 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11L12 3.5 20.5 11"/><path d="M6 9.5V20h12V9.5"/></svg>
         </button>
       </div>
+
+      <!-- af-ads: safe ad break — below all controls, own space -->
+      <div class="af-ads-break" id="af-ads-clear" hidden aria-label="Advertisement">
+        <span class="af-ads-label">ADVERTISEMENT</span>
+        <div class="af-ads-slot"></div>
+      </div>
     </div>
   </div>
 
@@ -323,6 +359,12 @@
         <button class="icon-btn" id="btnOverHome" aria-label="Home">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11L12 3.5 20.5 11"/><path d="M6 9.5V20h12V9.5"/></svg>
         </button>
+      </div>
+
+      <!-- af-ads: safe ad break — below all controls, own space -->
+      <div class="af-ads-break" id="af-ads-over" hidden aria-label="Advertisement">
+        <span class="af-ads-label">ADVERTISEMENT</span>
+        <div class="af-ads-slot"></div>
       </div>
     </div>
   </div>
@@ -347,6 +389,80 @@
 
 <script>
 'use strict';
+/* ================================================================
+   af-ads — REUSABLE DEFENSIVE ADSENSE MANAGER
+   Self-contained, prefix-isolated ("af-ads-"), safe to drop into
+   any HTML5 game. Never throws, never retries failed requests,
+   never touches gameplay.
+
+   PLACEHOLDER — ACTION REQUIRED:
+   ★ INSERT YOUR REAL AD-UNIT SLOT ID below in AFAds.SLOT ★
+   The publisher ID (ca-pub-4203020665151099) in the <head> script
+   is NOT a slot ID. Create a display ad unit in your AdSense
+   account, copy its numeric slot ID (e.g. '1234567890') and put
+   it in AFAds.SLOT. Until a real slot ID is set, all ad containers
+   stay hidden and the game runs exactly as before — zero impact.
+================================================================ */
+const AFAds = {
+  CLIENT: 'ca-pub-4203020665151099',   // publisher ID (already in <head>)
+  SLOT:   '',                          // ★ INSERT REAL AD-UNIT SLOT ID HERE ★
+
+  MIN_INTERVAL_MS: 90000,   // max 1 ad per 90 seconds (conservative)
+  MIN_LEVELS_BETWEEN: 2,    // and at least 2 level transitions apart
+
+  _lastShow: 0,
+  _levelsSince: 99,
+
+  noteLevelAdvance(){ this._levelsSince++; },
+
+  canShowAd(){
+    if(!this.SLOT) return false;                                   // no slot configured
+    if(typeof window === 'undefined') return false;
+    if(Date.now() - this._lastShow < this.MIN_INTERVAL_MS) return false;
+    if(this._lastShow !== 0 && this._levelsSince < this.MIN_LEVELS_BETWEEN) return false;
+    return true;
+  },
+
+  /* Creates the <ins> unit inside a container once; reuses it after. */
+  createAdContainer(container){
+    if(!container || container.querySelector('ins.af-ads-ins')) return;
+    const slotEl = container.querySelector('.af-ads-slot');
+    if(!slotEl) return;
+    const ins = document.createElement('ins');
+    ins.className = 'adsbygoogle af-ads-ins';
+    ins.style.display = 'block';
+    ins.setAttribute('data-ad-client', this.CLIENT);
+    ins.setAttribute('data-ad-slot', this.SLOT);
+    ins.setAttribute('data-ad-format', 'auto');
+    ins.setAttribute('data-full-width-responsive', 'true');
+    slotEl.appendChild(ins);
+  },
+
+  /* Called only when gameplay has naturally stopped (results screens). */
+  showGameBreakAd(container){
+    try{
+      if(!container) return;
+      if(!this.canShowAd()){ container.hidden = true; return; }
+      this.createAdContainer(container);
+      const ins = container.querySelector('ins.af-ads-ins');
+      if(ins && !ins.dataset.afPushed){
+        ins.dataset.afPushed = '1';
+        (window.adsbygoogle = window.adsbygoogle || []).push({});   // single request, never repeated
+      }
+      container.hidden = false;
+      this._lastShow = Date.now();
+      this._levelsSince = 0;
+    }catch(e){
+      if(container) container.hidden = true;   // ad failure must never surface
+    }
+  },
+
+  hideGameBreakAd(container){ if(container) container.hidden = true; },
+
+  /* Optional generic init — safe no-op if nothing to do. */
+  initAds(){ /* AdSense lib is loaded once via <head>; nothing else needed. */ }
+};
+
 /* ============================== helpers ============================== */
 const $ = s => document.querySelector(s);
 const clamp = (v,a,b) => v<a?a:v>b?b:v;
@@ -830,6 +946,8 @@ function goHome(){
   $('#hud').classList.add('off');
   resetChips();
   $('#homeBest').textContent=fmt(best);
+  AFAds.hideGameBreakAd(document.getElementById('af-ads-clear'));
+  AFAds.hideGameBreakAd(document.getElementById('af-ads-over'));
   setupDemo();
   show(screens.home);
 }
@@ -845,6 +963,7 @@ function startGame(){
 }
 function loadLevel(n){
   G.level=n;
+  AFAds.noteLevelAdvance();               // af-ads: natural-break tracking
   G.levelSpeed=levelSpeed(n);
   G.paddle.baseW=paddleWidth(n);
   G.bricks=buildLevel(n,false);
@@ -853,7 +972,6 @@ function loadLevel(n){
   G.fx={wide:0,slow:0,fire:0};
   G.paddle.w=G.paddle.baseW;
   G.levelIntro=1.4;
-  // challenge tag for this level
   const tags=[];
   if(n>1){
     if(levelSpeed(n)>levelSpeed(n-1)) tags.push('FASTER BALL');
@@ -879,7 +997,6 @@ function showClear(){
   $('#clLevel').textContent=G.level;
   $('#clScore').textContent=fmt(G.score);
   $('#clBonus').textContent='+'+fmt(bonus);
-  // warn about next level's challenge
   const n=G.level+1;
   const tags=[];
   if(levelSpeed(n)>levelSpeed(n-1)) tags.push('FASTER BALL');
@@ -888,6 +1005,8 @@ function showClear(){
   if(explosiveCount(n)>explosiveCount(n-1)) tags.push('MORE BOMBS');
   $('#clNext').textContent=tags.length?('NEXT: '+tags.join(' · ')):'GET READY!';
   show(screens.clear);
+  /* af-ads: gameplay has stopped — safe natural break */
+  AFAds.showGameBreakAd(document.getElementById('af-ads-clear'));
 }
 function showOver(){
   sfx('over');
@@ -899,6 +1018,8 @@ function showOver(){
   $('#ovNew').style.display=newBest?'inline-block':'none';
   $('#homeBest').textContent=fmt(best);
   show(screens.over);
+  /* af-ads: gameplay has stopped — safe natural break */
+  AFAds.showGameBreakAd(document.getElementById('af-ads-over'));
 }
 function togglePause(force){
   if(G.mode!=='play') return;
