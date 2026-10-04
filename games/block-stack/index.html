@@ -8,6 +8,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     GOOGLE ADSENSE — loaded ONCE (publisher: ca-pub-4203020665151099)
+     The manager below reuses this script; it is never added twice.
+     ============================================================ -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4203020665151099"
+     crossorigin="anonymous"></script>
+
 <style>
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html{-webkit-text-size-adjust:100%}
@@ -17,6 +25,18 @@
   #app{position:relative;width:min(100vw,480px);height:100vh;height:100dvh;overflow:hidden;
     background:#0a2416;box-shadow:0 0 60px rgba(0,0,0,.6)}
   #cv{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+
+  /* ============================================================
+     ADSENSE SAFE CONTAINER ("af-ads-" prefix — no conflicts)
+     Own normal document space. Never floats, never overlays,
+     never transparent, never above buttons or the canvas.
+     ============================================================ */
+  .af-ads-game-break{width:100%;max-width:328px;margin:20px auto 0;
+    min-height:0;height:100px;overflow:hidden;border-radius:12px;
+    background:rgba(7,26,15,.35);border:1px solid rgba(255,255,255,.08);
+    touch-action:pan-y}
+  .af-ads-game-break[hidden]{display:none}
+  .af-ads-game-break ins{display:block;width:100%;height:100%}
 
   /* ================= HUD ================= */
   #hud{position:absolute;top:0;left:0;right:0;z-index:5;
@@ -70,8 +90,6 @@
 
   /* ================================================
      NEW TITLE — "Block Stack Jungle"
-     Letters sit on stacked stone blocks (like the game),
-     wooden ribbon eyebrow + animated wavy vine (〰️)
      ================================================ */
   .logo{position:relative;display:flex;flex-direction:column;align-items:center;margin-bottom:20px;z-index:1}
   .logo-ribbon{position:relative;z-index:2;display:flex;align-items:center;gap:12px;
@@ -85,13 +103,11 @@
     transform:translateY(7px)}
   .logo-ribbon .rn{width:7px;height:7px;border-radius:50%;background:#33200e;flex:none;
     box-shadow:inset 0 -1.5px 1.5px rgba(0,0,0,.7),inset 0 1.5px 1.5px rgba(255,220,160,.5)}
-
-  /* the title as a stacked block tower */
   .logo-tower{position:relative;display:flex;align-items:flex-end;gap:7px;
     padding-top:14px;transform-origin:50% 100%;
     animation:towerSway 5s ease-in-out infinite}
   @keyframes towerSway{0%,100%{transform:rotate(-1.3deg)}50%{transform:rotate(1.3deg)}}
-  .logo-tower::before{ /* ground shadow */
+  .logo-tower::before{
     content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);
     width:86%;height:14px;border-radius:50%;
     background:radial-gradient(ellipse at center,rgba(0,0,0,.45),transparent 70%)}
@@ -113,7 +129,6 @@
   .lt.c2{background:linear-gradient(180deg,#f0c98c,#a06d38)}
   .lt.c3{background:linear-gradient(180deg,#e89a6c,#8b4227)}
   .lt.c4{background:linear-gradient(180deg,#9fbeb2,#46635c)}
-  /* leaf sprout on top of the tower */
   .logo-tower::after{content:'';position:absolute;top:-6px;left:50%;width:30px;height:16px;
     transform:translateX(-30%) rotate(-18deg);
     background:#3f8f3e;border-radius:80% 20% 70% 30%/70% 40% 60% 30%;
@@ -121,8 +136,6 @@
     animation:leafBob 3.4s ease-in-out infinite;transform-origin:0 100%}
   @keyframes leafBob{0%,100%{transform:translateX(-30%) rotate(-24deg)}
     50%{transform:translateX(-30%) rotate(-12deg)}}
-
-  /* animated 〰️ wavy vine divider */
   .logo-wave{display:block;margin-top:16px;width:210px;height:24px;overflow:visible}
   .logo-wave .wp{fill:none;stroke:#5cbf4a;stroke-width:4;stroke-linecap:round;
     stroke-dasharray:340;stroke-dashoffset:340;animation:drawVine 1.1s .55s ease forwards;
@@ -169,7 +182,6 @@
   @keyframes popIn{from{transform:scale(.75);opacity:0}to{transform:scale(1);opacity:1}}
   .panel h2{font-family:'Lilita One';font-weight:400;font-size:28px;color:#fdf6e3;
     text-shadow:0 3px 0 rgba(15,40,22,.8)}
-  /* shared 〰️ mini-vine under every panel title */
   .p-wave{display:block;margin:6px auto 12px;width:76px;height:12px;overflow:visible}
   .p-wave path{fill:none;stroke:#5cbf4a;stroke-width:3.4;stroke-linecap:round;
     stroke-dasharray:130;stroke-dashoffset:130}
@@ -229,6 +241,7 @@
     .logo{margin-bottom:12px}
     .lt{font-size:34px;padding:8px 8px 10px}
     .instr{margin-bottom:16px;font-size:14px}
+    .af-ads-game-break{height:84px;margin-top:14px}
   }
 </style>
 </head>
@@ -263,13 +276,11 @@
 
   <!-- HOME -->
   <div id="screenHome" class="screen">
-    <!-- BEST card — top-left -->
     <div class="home-best">
       <svg viewBox="0 0 24 24"><path d="M7 2h10v2h5v3a5 5 0 01-5.1 5A6 6 0 0113 14.7V17h3v3H8v-3h3v-2.3A6 6 0 017.1 12 5 5 0 012 7V4h5V2zM4 6v1a3 3 0 003 3V6H4zm16 0h-3v4a3 3 0 003-3V6z"/></svg>
       <div class="lbl"><span>BEST</span><b id="homeBest">0</b></div>
     </div>
 
-    <!-- ======= NEW TITLE: stacked-block logo ======= -->
     <div class="logo">
       <div class="logo-ribbon"><span class="rn"></span>BLOCK STACK<span class="rn"></span></div>
       <div class="logo-tower" role="heading" aria-level="1" aria-label="Jungle">
@@ -335,7 +346,10 @@
     </div>
   </div>
 
-  <!-- GAME OVER -->
+  <!-- GAME OVER
+       ⚠️ The ad container below lives in its OWN normal document space,
+       AFTER all interactive buttons, with 20px+ clearance.
+       It is hidden with the screen and never overlays the canvas/HUD. -->
   <div id="screenOver" class="screen hidden">
     <div class="panel">
       <h2>GAME OVER</h2>
@@ -351,6 +365,9 @@
       <button id="btnAgain" class="btn btn-primary">PLAY AGAIN</button>
       <button id="btnHomeO" class="btn btn-ghost">HOME</button>
     </div>
+
+    <!-- AdSense game-break ad (managed by AF_Ads below) -->
+    <div class="af-ads-game-break" id="afAdsBreak" aria-label="Advertisement" hidden></div>
   </div>
 </div>
 
@@ -376,6 +393,98 @@ const rgb = c => `rgb(${c[0]|0},${c[1]|0},${c[2]|0})`;
 const mix = (a,b,t)=>[a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t, a[2]+(b[2]-a[2])*t];
 function rr(g,x,y,w,h,r){r=Math.min(r,w/2,h/2);g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
 function buzz(p){ if(navigator.vibrate){ try{navigator.vibrate(p)}catch(e){} } }
+
+/* ============================================================
+   ADSENSE MANAGER ("AF_Ads") — reusable, defensive, self-contained
+   - Reuses the single AdSense loader script from <head>
+   - Reuses (or creates) ONE container: #afAdsBreak / .af-ads-game-break
+   - Session frequency guard: min 120s between ads AND min 2
+     game-overs between ads → rapid restarts never spam new requests
+   - All failures are silent; the game runs perfectly without ads
+   ============================================================ */
+const AF_Ads={
+  CLIENT:'ca-pub-4203020665151099',
+  /* ⚠️ PLACEHOLDER — insert your real AdSense AD-UNIT slot ID here.
+     The publisher ID above is NOT a slot ID. Until a real slot ID
+     is set, the container stays hidden and no ad is requested. */
+  SLOT:'',                       // e.g. '1234567890'
+  MIN_INTERVAL_MS:120000,        // ≥ 2 minutes between ads
+  MIN_GAMEOVERS:2,               // ≥ 2 game-overs between ads
+  _lastShow:0,_gameOvers:0,_requesting:false,_failed:false,_ready:false,
+
+  initAds(){
+    if(this._ready)return;
+    this._ready=true;
+    // normalize the <ins> height once its parent becomes measurable
+    window.addEventListener('resize',()=>this._fit(),{passive:true});
+  },
+  _container(){
+    let c=document.getElementById('afAdsBreak');
+    if(!c){ // fallback: create one safely (reused across projects)
+      c=document.createElement('div');
+      c.className='af-ads-game-break';c.id='afAdsBreak';
+      c.setAttribute('aria-label','Advertisement');c.hidden=true;
+      const over=document.getElementById('screenOver');
+      if(over)over.appendChild(c);else return null;
+    }
+    return c;
+  },
+  canShowAd(){
+    if(this._failed||this._requesting)return false;
+    if(!this.SLOT)return false;                       // no real slot yet
+    if(typeof window.adsbygoogle==='undefined'&&!document.querySelector('script[src*="adsbygoogle"]'))return false;
+    if(Date.now()-this._lastShow<this.MIN_INTERVAL_MS)return false;
+    if(this._gameOvers<this.MIN_GAMEOVERS)return false;
+    return true;
+  },
+  createAdContainer(){
+    const c=this._container();
+    if(!c)return null;
+    if(!c.querySelector('ins.adsbygoogle')){
+      const ins=document.createElement('ins');
+      ins.className='adsbygoogle';
+      ins.style.display='block';
+      ins.setAttribute('data-ad-client',this.CLIENT);
+      ins.setAttribute('data-ad-slot',this.SLOT);
+      ins.setAttribute('data-ad-format','auto');
+      ins.setAttribute('data-full-width-responsive','true');
+      c.appendChild(ins);
+    }
+    return c;
+  },
+  _fit(){ /* keep container inside viewport on small screens */
+    const c=this._container();if(!c)return;
+    const maxH=Math.max(70,Math.min(110,window.innerHeight*0.14));
+    c.style.height=maxH+'px';
+  },
+  showGameBreakAd(){
+    this._gameOvers++;
+    if(!this.canShowAd())return;
+    const c=this.createAdContainer();
+    if(!c)return;
+    this._requesting=true;
+    try{
+      (window.adsbygoogle=window.adsbygoogle||[]).push({});
+      this._lastShow=Date.now();
+      c.hidden=false;this._fit();
+      // if nothing rendered in 5s (blocked/slow/no fill) → collapse silently, no retries
+      setTimeout(()=>{
+        this._requesting=false;
+        if(c.offsetHeight<12){c.hidden=true;this._failed=false;}
+      },5000);
+    }catch(e){
+      this._requesting=false;c.hidden=true; // never break the game
+    }
+  },
+  hideGameBreakAd(){
+    const c=this._container();
+    if(c)c.hidden=true;
+  },
+  /* called when returning to home / starting a new run */
+  resetSession(){ this._gameOvers=0; }
+};
+document.addEventListener('DOMContentLoaded',()=>AF_Ads.initAds());
+AF_Ads.initAds();
 
 /* ---------- palettes & sky ---------- */
 const PALS=[
@@ -813,6 +922,7 @@ function resetWorld(){
 function setupHome(){
   resetWorld();
   state='home'; paused=false;
+  AF_Ads.hideGameBreakAd();              // never show ads on the home screen
   const offs=[0,8,-6,4,-9,2];
   tower.blocks=offs.map((o,i)=>{
     const w=BASE_W-i*6;
@@ -826,7 +936,6 @@ function setupHome(){
   scrHome.classList.remove('hidden'); scrOver.classList.add('hidden');
   scrPause.classList.add('hidden'); scrHelp.classList.add('hidden');
   $('#homeBest').textContent=best;
-  // replay the title intro animations (blocks drop in, vine draws)
   const lt=document.querySelectorAll('.lt');
   lt.forEach(el=>{ el.style.animation='none'; void el.offsetWidth; el.style.animation=''; });
   const wp=document.querySelector('.logo-wave .wp');
@@ -835,6 +944,7 @@ function setupHome(){
 function startGame(){
   resetWorld();
   state='playing'; paused=false;
+  AF_Ads.hideGameBreakAd();              // never show ads during gameplay
   score=0; placed=0; level=1; maxCombo=0; hasDropped=false;
   curPalIdx=0; swingSpeed=speedFor(1); amp=ampFor(1);
   pivotX=W/2; pivotTarget=W/2; hangDelay=0.4; shakeT=0; flashT=0;
@@ -873,6 +983,9 @@ function showOver(){
   if(nb){ confetti(); buzz([40,60,40,60,80]); }
   hud.classList.add('hidden');
   scrOver.classList.remove('hidden');
+  /* ADSENSE: natural break — gameplay has stopped, results are shown.
+     Frequency guard inside canShowAd() decides silently. */
+  AF_Ads.showGameBreakAd();
 }
 function updateHUD(){
   if(hudScoreEl.textContent!==String(score)){
@@ -1185,7 +1298,10 @@ function bindBtn(el,fn){
   el.addEventListener('pointerdown',e=>{e.stopPropagation();Snd.ensure();Snd.tap()});
   el.addEventListener('click',e=>{e.stopPropagation();fn()});
 }
+/* Ad container is excluded from the game's tap handling so touches
+   inside the ad belong to the ad only — never intercepted, never faked. */
 app.addEventListener('pointerdown',e=>{
+  if(e.target.closest&&e.target.closest('.af-ads-game-break'))return;
   Snd.ensure();
   const rect=cv.getBoundingClientRect();
   tapRing((e.clientX-rect.left)*W/rect.width,(e.clientY-rect.top)*viewH/rect.height);
@@ -1193,7 +1309,11 @@ app.addEventListener('pointerdown',e=>{
   if(state==='playing'&&!paused&&hang&&hang.active&&time>inputLockUntil) cutVine();
 });
 app.addEventListener('contextmenu',e=>e.preventDefault());
-document.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
+document.addEventListener('touchmove',e=>{
+  // allow native touch inside the ad container only; block page scroll elsewhere
+  if(e.target.closest&&e.target.closest('.af-ads-game-break'))return;
+  e.preventDefault();
+},{passive:false});
 document.addEventListener('gesturestart',e=>e.preventDefault());
 window.addEventListener('keydown',e=>{
   if(e.code==='Space'||e.code==='Enter'){
