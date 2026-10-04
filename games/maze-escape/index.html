@@ -110,9 +110,10 @@ body.playing #hud{display:block;opacity:1}
 
 /* ---- PAUSE / OVER ---- */
 #scrPause,#scrOver{align-items:center;justify-content:center;background:rgba(2,10,15,.74);padding:22px}
+#scrOver{overflow-y:auto;-webkit-overflow-scrolling:touch}
 .panel{width:min(88vw,330px);background:rgba(5,22,30,.93);border:1px solid var(--line);border-radius:24px;
   padding:26px 22px 20px;display:flex;flex-direction:column;gap:10px;transform:translateY(0);transition:transform .38s;
-  box-shadow:0 24px 70px rgba(0,6,10,.6)}
+  box-shadow:0 24px 70px rgba(0,6,10,.6);margin:auto}
 .screen:not(.on) .panel{transform:translateY(16px)}
 .panel h2{font-size:24px;font-weight:800;letter-spacing:.14em;text-align:center}
 .panel .sub{text-align:center;font-size:13px;font-weight:600;color:var(--dim);margin-top:-4px}
@@ -133,6 +134,30 @@ body.playing #hud{display:block;opacity:1}
   color:var(--pearl-ink);font-size:11px;font-weight:800;letter-spacing:.24em}
 #bestBadge.on{display:block;animation:popB .5s cubic-bezier(.2,1.6,.4,1)}
 @keyframes popB{0%{transform:scale(0)}100%{transform:scale(1)}}
+
+/* ================= AD SLOT (af-ads-*) =================
+   Own normal document space inside the Game-Over panel.
+   Never overlaps the canvas, buttons or controls.        */
+.af-ads-game-break{
+  display:none;               /* hidden until a natural game-over break */
+  width:100%;
+  max-width:336px;
+  margin:12px auto 6px;       /* generous separation from buttons above/below */
+  padding:10px 8px 6px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;            /* never causes horizontal scrolling */
+  background:rgba(255,255,255,.03);
+  border-radius:12px;
+}
+.af-ads-game-break.af-ads-visible{display:block}
+.af-ads-label{
+  display:block;text-align:center;
+  font-size:9px;font-weight:700;letter-spacing:.3em;
+  color:var(--dim);margin-bottom:8px;pointer-events:none;
+}
+.af-ads-inner{width:100%;overflow:hidden}
+.af-ads-inner ins{display:block;width:100%}
 </style>
 </head>
 <body>
@@ -211,7 +236,7 @@ body.playing #hud{display:block;opacity:1}
   </div>
 </div>
 
-<!-- GAME OVER -->
+<!-- GAME OVER (ad slot lives here, in its own space) -->
 <div class="screen" id="scrOver">
   <div class="panel">
     <h2>DIVE COMPLETE</h2>
@@ -223,6 +248,13 @@ body.playing #hud{display:block;opacity:1}
       <div class="ms"><b id="oPearls">0</b><i>PEARLS</i></div>
       <div class="ms"><b id="oBest">0</b><i>BEST</i></div>
     </div>
+
+    <!-- AdSense game-break ad: own space, separate from all buttons -->
+    <div class="af-ads-game-break" id="afAdsBreak" aria-label="Advertisement">
+      <span class="af-ads-label">ADVERTISEMENT</span>
+      <div class="af-ads-inner" id="afAdsInner"></div>
+    </div>
+
     <button class="btn primary" id="btnAgain">DIVE AGAIN</button>
     <button class="btn ghost" id="btnHomeO">HOME</button>
   </div>
@@ -230,6 +262,107 @@ body.playing #hud{display:block;opacity:1}
 
 <script>
 'use strict';
+/* ============================================================
+   ADSENSE MANAGER (af-ads-*)  —  fully defensive, self-contained
+   - Loads the AdSense library exactly once (reuses existing tag)
+   - One ad container, created once, reused afterwards
+   - One ad request per session max (conservative frequency)
+   - Only shown on the natural Game-Over break; never during play
+   - Never overlaps gameplay, canvas, buttons or touch controls
+   - All failures are silent; the game always keeps working
+   ============================================================ */
+var AFADS=(function(){
+  var PUB_ID='ca-pub-4203020665151099';          // provided publisher ID
+  var SLOT_ID='AF_SLOT_ID_PLACEHOLDER';          // <-- REPLACE with your real AdSense ad-unit slot ID
+  var container=null,inner=null;
+  var scriptInjected=false,scriptFailed=false;
+  var requested=false;         // one request per session
+  var pushTried=false;
+  var MIN_FIRST_DELAY_MS=0;    // (kept 0: ad only appears after a full dive anyway)
+
+  function hostHasAdSenseTag(){
+    var s=document.querySelectorAll('script[src*="adsbygoogle"]');
+    for(var i=0;i<s.length;i++){
+      if((s[i].src||'').indexOf('client='+PUB_ID)!==-1)return true;
+    }
+    return false;
+  }
+  function loadLibrary(){
+    try{
+      if(hostHasAdSenseTag()||document.getElementById('af-ads-script')){scriptInjected=true;return;}
+      var sc=document.createElement('script');
+      sc.id='af-ads-script';
+      sc.async=true;
+      sc.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+PUB_ID;
+      sc.setAttribute('crossorigin','anonymous');
+      sc.onerror=function(){scriptFailed=true;};
+      (document.head||document.documentElement).appendChild(sc);
+      scriptInjected=true;
+    }catch(e){scriptFailed=true;}
+  }
+  function createAdContainer(){
+    if(container)return container;
+    try{
+      container=document.getElementById('afAdsBreak')||
+        document.querySelector('.af-ads-game-break');
+      if(!container)return null;
+      inner=document.getElementById('afAdsInner')||
+        container.querySelector('.af-ads-inner');
+      return container;
+    }catch(e){return null;}
+  }
+  function buildIns(){
+    if(!inner||inner.childNodes.length)return;
+    try{
+      var ins=document.createElement('ins');
+      ins.className='adsbygoogle';
+      ins.style.display='block';
+      ins.setAttribute('data-ad-client',PUB_ID);
+      ins.setAttribute('data-ad-slot',SLOT_ID);   // placeholder until real slot ID is added
+      ins.setAttribute('data-ad-format','auto');
+      ins.setAttribute('data-full-width-responsive','true');
+      inner.appendChild(ins);
+      (window.adsbygoogle=window.adsbygoogle||[]).push({});
+      pushTried=true;
+    }catch(e){/* silent — game unaffected */}
+  }
+  function initAds(){
+    try{
+      loadLibrary();
+      createAdContainer();
+    }catch(e){/* silent */}
+  }
+  function canShowAd(){
+    if(scriptFailed)return false;
+    if(typeof window.adsbygoogle==='undefined')return false; // library not ready/blocked
+    if(!createAdContainer())return false;
+    // Conservative frequency: request the ad only once per session.
+    // After the first fill, the same container is simply re-shown (no re-request, no refresh).
+    return true;
+  }
+  function showGameBreakAd(){
+    try{
+      if(!canShowAd())return;
+      if(!requested){
+        requested=true;
+        buildIns();
+      }
+      if(container)container.classList.add('af-ads-visible');
+    }catch(e){/* silent */}
+  }
+  function hideGameBreakAd(){
+    try{
+      if(container)container.classList.remove('af-ads-visible');
+    }catch(e){/* silent */}
+  }
+  return {
+    initAds:initAds,
+    canShowAd:canShowAd,
+    showGameBreakAd:showGameBreakAd,
+    hideGameBreakAd:hideGameBreakAd
+  };
+})();
+
 /* ================= helpers ================= */
 const $=id=>document.getElementById(id);
 const TAU=Math.PI*2;
@@ -475,6 +608,7 @@ function spawnPattern(y){
 
 /* ================= run control ================= */
 function startRun(){
+  AFADS.hideGameBreakAd();          // never during gameplay
   G.ents.length=0;G.parts.length=0;G.bands.length=0;
   G.depthU=0;G.camU=-DY0;G.speed=0;G.shake=0;G.flash=0;
   G.hearts=3;G.o2=100;G.pearls=0;G.combo=0;G.comboT=0;G.airHitT=0;
@@ -502,6 +636,7 @@ function doResume(){
 function toHome(){
   state='home';G.ents.length=0;G.parts.length=0;
   document.body.classList.remove('playing');
+  AFADS.hideGameBreakAd();
   hide('scrPause');hide('scrOver');show('scrHome');
   refreshHome();SFX.click();
   if(AC)AC.resume();
@@ -534,6 +669,9 @@ function showOver(){
   $('bestBadge').classList.toggle('on',newBest);
   if(newBest)SFX.best();
   state='over';show('scrOver');
+  // Natural break: gameplay has fully stopped. Show the ad AFTER
+  // the results screen is visible, never during play.
+  setTimeout(()=>{AFADS.showGameBreakAd();},400);
 }
 
 /* ================= update ================= */
@@ -648,7 +786,6 @@ function updateDying(dt){
 }
 function updateHome(dt){
   G.camU+=28*dt;
-  // ambient bubbles from the drifting diver
   if(Math.random()<dt*4){
     const bx=UW*.5+Math.sin(time*.6)*26;
     const by=G.camU+428+Math.sin(time*.9)*16;
@@ -938,7 +1075,6 @@ function render(){
   drawFarLife();
 
   if(state==='home'){
-    // floating decorative pearls around the title zone
     const deco=[[UW*.17,G.camU+236,0],[UW*.83,G.camU+318,2.1],[UW*.22,G.camU+560,4.2],[UW*.8,G.camU+596,1.2]];
     for(const [px,py,ph] of deco)
       drawPearl({x:px+Math.sin(time*.7+ph)*10,y:py+Math.sin(time*.9+ph)*8,ph});
@@ -997,7 +1133,6 @@ function refreshHome(){
   $('bestScore').textContent=save.best.toLocaleString('en-US');
   $('hBest').textContent=save.bestDepth>0?'BEST '+save.bestDepth+'M':'FIRST DIVE';
 }
-/* long-press BEST chip to reset records (no extra button clutter) */
 let lpTimer=null,lpArmed=false,lpArmTO=null;
 const bestChip=$('bestChip');
 bestChip.addEventListener('pointerdown',e=>{
@@ -1033,6 +1168,7 @@ document.querySelectorAll('.sndBtn').forEach(b=>
 setMuted(save.muted);
 buildHearts();
 refreshHome();
+AFADS.initAds();          // safe, defensive init — never throws
 requestAnimationFrame(frame);
 </script>
 </body>
